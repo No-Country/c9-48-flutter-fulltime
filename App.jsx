@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity ,StyleSheet, ScrollView, ViewBase } from "react-native";
 
-const IntroductionScreen = () => {
+const CarouselIntro = () => {
+  const OmitirButton = () => {
+    return (
+      <TouchableOpacity styles={styles.OmitirButton}>
+        <Text style={styles.OmitirButtonText}>Saltar</Text>
+      </TouchableOpacity>
+    )
+      
+  }
   const EmpezarButton = () => {
     return (
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Empezar</Text>
+      <TouchableOpacity style={styles.Empezarbutton}>
+        <Text style={styles.EmpezarButtonText}>Empezar</Text>
       </TouchableOpacity>
     );
   };
@@ -14,12 +22,10 @@ const IntroductionScreen = () => {
 
   const renderSlides = () => {
     return [
-      
       {
         image: require("./assets/slide1.png"),
         mainText: "Encuentra cuidadores para tu casa y mascotas",
         subText: "Intercambia hospedaje por el cuidado de tu casa y mascotas.",
-     
       },
       {
         image: require("./assets/slide2.png"),
@@ -37,14 +43,19 @@ const IntroductionScreen = () => {
           <Image source={slide.image} />
           <Text style={styles.mainText}>{slide.mainText}</Text>
           <Text style={styles.subText}>{slide.subText}</Text>
-          
         </View>
       );
     });
   };
 
+// Return principal
+
   return (
     <View>
+      
+      <View style={{ position: "absolute", top: 0, flexDirection: "column", alignSelf: "flex-end" }}>
+        {OmitirButton()}
+      </View>
       <ScrollView 
       horizontal
       pagingEnabled
@@ -70,12 +81,14 @@ const IntroductionScreen = () => {
           />
         ))}
       </View>
-      <View style={{ position: "absolute", bottom: 20, flexDirection: "row", alignSelf: "center" }}>
+      <View style={{ position: "absolute", bottom: 80, flexDirection: "row", alignSelf: "center" }}>
         {EmpezarButton()}
       </View>
 </View>
   );
 };
+
+// Estilos
 
 const styles = StyleSheet.create({
   slide: {
@@ -99,13 +112,29 @@ const styles = StyleSheet.create({
       textAlign: "center",
     marginBottom: 20
   },
-  button: {
+  Empezarbutton: {
     backgroundColor: "#575dfb",
     padding: 10,
     borderRadius: 5
   },
-  buttonText: {
+  EmpezarButtonText: {
     color: "#f4f5ff",
+    fontWeight: "bold",
+    textAlign: "center",
+    borderRadius: 100,
+    paddingHorizontal: 80,
+    paddingVertical: 10,
+    
+  },
+
+  OmitirButton: {
+    backgroundColor: "blue",
+    padding: 10,
+    borderRadius: 5
+  },
+  OmitirButtonText: {
+    color: "black",
+    fontSize: 15,
     fontWeight: "bold",
     textAlign: "center",
     paddingHorizontal: 50,
@@ -113,4 +142,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default IntroductionScreen;
+export default CarouselIntro;
