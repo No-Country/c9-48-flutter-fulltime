@@ -4,8 +4,10 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 
-const RegistroAnfitrion = () => {
-    const [text, onChangeText] = React.useState('');
+const RegistroAnfitrion = ({ navigation }) => {
+    const [AnfitrionEmail, onChangeAnfEmail] = React.useState('');
+    const [AnfitrionName, onChangeAnfName] = React.useState('');
+    const [AnfitrionPass, onChangeAnfPass] = React.useState('');
     const isDarkMode = useColorScheme() === 'dark'
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
@@ -17,25 +19,29 @@ const RegistroAnfitrion = () => {
                 <Text style={Styles.formTitles}>Email</Text>
                 <TextInput
                     style={Styles.input}
-                    onChangeText={onChangeText}
-                    value={text}
+                    onSubmitEditing={onChangeAnfEmail}
+                    value={AnfitrionEmail}
                     placeholder="Ex: abc@example.com "/>
                 <Text style={Styles.formTitles}>Tu nombre</Text>
                 <TextInput
                     style={Styles.input}
-                    onChangeText={onChangeText}
-                    value={text}
+                    onSubmitEditing={onChangeAnfName}
+                    value={AnfitrionName}
                     placeholder="Ex. Saul Ramirez"/>
                 <Text style={Styles.formTitles}>Tu contraseña</Text>
                 <TextInput
                     style={[Styles.input, {marginBottom: 0}]}
-                    onChangeText={onChangeText}
-                    value={text}
+                    onSubmitEditing={onChangeAnfPass}
+                    value={AnfitrionPass}
                     placeholder="*******"/>
                 <Text style={{marginBottom: 12}}>Mínimo ingresa 7 caracteres</Text>
             </View>
             <View>
-                <Button title='Registrarme'/>
+                <Button 
+                title='Registrarme'
+                color= '#FF5E5E'
+                // onPress={() => navigation.navigate('RegistroAnfitrionDetalle')}
+                />
             </View>
             <View>
                 <Text>¿Ya tienes cuenta? Login</Text>
@@ -72,6 +78,7 @@ const Styles = StyleSheet.create ({
         borderRadius: 16,
         padding: 10,
     },
+
 })
 
 export default RegistroAnfitrion;
