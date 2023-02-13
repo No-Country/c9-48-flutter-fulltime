@@ -23,7 +23,8 @@ const Bienvenidos = ({navigation}) => {
                 <Button
                     title='Crear Cuenta'
                     color='#575DFB'
-                // onPress={() => navigation.navigate('CarouselIntro')}
+                    onPress={() => navigation.navigate('RegistroOpcion')}
+                
                 />
 
             </View>
@@ -31,7 +32,7 @@ const Bienvenidos = ({navigation}) => {
                 <Button
                     title='Inicia Sesión'
                     color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroOpcion')}
+                    // onPress={() => navigation.navigate('CarouselIntro')}
                 />
             </View>
             

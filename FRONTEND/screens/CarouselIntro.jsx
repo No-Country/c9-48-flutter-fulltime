@@ -2,7 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Button, useColorScheme } from "react-native";
-import {Colors } from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+
 const CarouselIntro = ({navigation}) => {
     const isDarkMode = useColorScheme() === 'dark';
     const OmitirButton = () => {
@@ -129,7 +130,6 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         paddingHorizontal: 80,
         paddingVertical: 10,
-
     },
 
     OmitirButton: {
