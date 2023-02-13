@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import  CarouselIntro  from './screens/CarouselIntro'
 import Bienvenidos from './screens/Bienvenidos';
 import RegistroOpcion from './screens/RegistroOpcion';
+import RegistroAnfitrion from './screens/RegistroAnfitrion';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const MyStack = () => {
         <Stack.Screen name="CarouselIntro" component={CarouselIntro} options={{ headerShown: false }} />
         <Stack.Screen name="Bienvenidos" component={Bienvenidos} options={{ headerShown: false }} />
         <Stack.Screen name="RegistroOpcion" component={RegistroOpcion} />
+        <Stack.Screen name='RegistroAnfitrion' component={RegistroAnfitrion}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
