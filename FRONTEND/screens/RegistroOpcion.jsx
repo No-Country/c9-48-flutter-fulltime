@@ -15,7 +15,7 @@ const RegistroOpcion = ({ navigation }) => {
             
             <TouchableOpacity 
                 style={Styles.containerOption}
-                // onPress={() => navigation.navigate('Bienvenidos')}
+                onPress={() => navigation.navigate('RegistroAnfitrion')}
             >
                     <Text style={Styles.title}>Soy anfitrión</Text>
                     <Text style={Styles.sub}>Quiero encontrar un cuidador para mi casa y/o mascotas.</Text>
@@ -25,7 +25,7 @@ const RegistroOpcion = ({ navigation }) => {
 
             <TouchableOpacity 
                 style={Styles.containerOption}
-                // onPress={() => navigation.navigate('Bienvenidos')}
+                // onPress={() => navigation.navigate('RegistroCuidador')}
             >
                 <Text style={Styles.title}>Soy cuidador</Text>
                 <Text style={Styles.sub}>Busco hospedarme a cambio del cuidado de casas y mascotas.</Text>
