@@ -25,7 +25,7 @@ const RegistroOpcion = ({ navigation }) => {
 
             <TouchableOpacity 
                 style={Styles.containerOption}
-                // onPress={() => navigation.navigate('RegistroCuidador')}
+                onPress={() => navigation.navigate('RegistroCuidador')}
             >
                 <Text style={Styles.title}>Soy cuidador</Text>
                 <Text style={Styles.sub}>Busco hospedarme a cambio del cuidado de casas y mascotas.</Text>
