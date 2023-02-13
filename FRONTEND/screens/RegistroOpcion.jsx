@@ -9,20 +9,26 @@ const RegistroOpcion = ({ navigation }) => {
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white }}>
             <View style={Styles.containerTitle}>
                 <Text style={Styles.bigTitle}>¿Qué tipo de cuenta deseas crear?</Text>
-                <Text> Elige tu perfil para ingresar</Text>
+                <Text style={Styles.bigSub}> Elige tu perfil para ingresar</Text>
             </View>
 
             
-            <TouchableOpacity style={Styles.containerOption}>
+            <TouchableOpacity 
+                style={Styles.containerOption}
+                // onPress={() => navigation.navigate('Bienvenidos')}
+            >
                     <Text style={Styles.title}>Soy anfitrión</Text>
-                    <Text>Quiero encontrar un cuidador para mi casa y/o mascotas.</Text>
+                    <Text style={Styles.sub}>Quiero encontrar un cuidador para mi casa y/o mascotas.</Text>
             </TouchableOpacity>
 
 
 
-            <TouchableOpacity style={Styles.containerOption}>
+            <TouchableOpacity 
+                style={Styles.containerOption}
+                // onPress={() => navigation.navigate('Bienvenidos')}
+            >
                 <Text style={Styles.title}>Soy cuidador</Text>
-                <Text>Busco hospedarme a cambio del cuidado de casas y mascotas.</Text>
+                <Text style={Styles.sub}>Busco hospedarme a cambio del cuidado de casas y mascotas.</Text>
             </TouchableOpacity>
 
         </View>
@@ -48,15 +54,32 @@ const Styles = StyleSheet.create ({
     },
 
     bigTitle: {
-        fontWeight: 'bold',
+        fontWeight: 400,
+        fontSize: 20,
+        color: 'black',
         padding: '5%'
+
+
+    },
+    bigSub: {
+        fontWeight: 400,
+        fontSize: 15,
+        color: '#5F5B5B',
+        padding: '5%'
+
     },
     title: {
-        fontWeight: 'bold'
-        
+        color: 'black',
+        fontWeight: 600,
+        fontSize: 16
+        // fontFamily: Inter
     },
     sub: {
-        fontWeight: 'normal'
+        color: 'black',
+        fontWeight: 400,
+        fontSize: 14
+
+        // fontFamily: Consolas
 }
 })
 export default RegistroOpcion;
