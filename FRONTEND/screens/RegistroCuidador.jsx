@@ -5,9 +5,9 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 const RegistroCuidador = ({ navigation }) => {
-    const [CuidadorEmail, onChangeCuiEmail] = React.useState('');
-    const [CuidadorName, onChangeCuiName] = React.useState('');
-    const [CuidadorPass, onChangeCuiPass] = React.useState('');
+    const [CuidadorEmail, onChangeCuiEmail] = React.useState();
+    const [CuidadorName, onChangeCuiName] = React.useState();
+    const [CuidadorPass, onChangeCuiPass] = React.useState();
     const isDarkMode = useColorScheme() === 'dark'
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
