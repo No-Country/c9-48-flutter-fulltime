@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
+import ImageUploadBox from '../components/ImageUploadBox';
 
 
 const RegistroAnfitrionCasa = ({ navigation }) => {
@@ -52,6 +53,7 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
             <View>
                 <Text style={Styles.SubBlue}>Fotos de mi casa</Text>
                 <Text style={Styles.RegistroSub}>Sube al menos 6 fotos de tu casa o depto. (No incluyas información sensible de tu domicilio).</Text>
+                <ImageUploadBox />
             </View>
             <View>
                 <Button
