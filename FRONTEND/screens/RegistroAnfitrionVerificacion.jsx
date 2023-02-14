@@ -4,7 +4,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 
-const RegistroCuidadorVerificacion = ({ navigation }) => {
+const RegistroAnfitrionVerificacion = ({ navigation }) => {
 
     const isDarkMode = useColorScheme() === 'dark'
     return (
@@ -17,8 +17,8 @@ const RegistroCuidadorVerificacion = ({ navigation }) => {
                 <Text style={Styles.formTitles}>Código de verificación</Text>
                 <TextInput
                     style={Styles.input}
-                    onSubmitEditing={onChangeCuiEmail}
-                    value={CuidadorEmail}
+                    // onSubmitEditing={onChangeCuiEmail}
+                    // value={CuidadorEmail}
                     placeholder="Ex: 123456" />
             </View>
             <View>
@@ -63,4 +63,4 @@ const Styles = StyleSheet.create({
 
 })
 
-export default RegistroCuidadorVerificacion;
+export default RegistroAnfitrionVerificacion;

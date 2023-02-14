@@ -6,6 +6,7 @@ import Bienvenidos from './screens/Bienvenidos';
 import RegistroOpcion from './screens/RegistroOpcion';
 import RegistroAnfitrion from './screens/RegistroAnfitrion';
 import RegistroCuidador from './screens/RegistroCuidador'
+import RegistroAnfitrionVerificacion from './screens/RegistroAnfitrionVerificacion'
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ const MyStack = () => {
         <Stack.Screen name="RegistroOpcion" component={RegistroOpcion} />
         <Stack.Screen name='RegistroAnfitrion' component={RegistroAnfitrion}/>
         <Stack.Screen name='RegistroCuidador' component={RegistroCuidador} />
-        
+        <Stack.Screen name='RegistroAnfitrionVerificacion' component={RegistroAnfitrionVerificacion} />
       </Stack.Navigator>
     </NavigationContainer>
   );
