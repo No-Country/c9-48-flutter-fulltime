@@ -8,6 +8,7 @@ import RegistroAnfitrion from './screens/RegistroAnfitrion';
 import RegistroCuidador from './screens/RegistroCuidador'
 import RegistroAnfitrionVerificacion from './screens/RegistroAnfitrionVerificacion'
 import RegistroAnfitrionDetalle from './screens/RegistroAnfitrionDetalle';
+import RegistroAnfitrionCasa from './screens/RegistroAnfitrionCasa';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,8 @@ const MyStack = () => {
         <Stack.Screen name='RegistroCuidador' component={RegistroCuidador} />
         <Stack.Screen name='RegistroAnfitrionVerificacion' component={RegistroAnfitrionVerificacion} />
         <Stack.Screen name='RegistroAnfitrionDetalle' component={RegistroAnfitrionDetalle} />
+        <Stack.Screen name='RegistroAnfitrionCasa' component={RegistroAnfitrionCasa}/>
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
