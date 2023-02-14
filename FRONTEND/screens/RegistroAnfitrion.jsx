@@ -5,9 +5,9 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 const RegistroAnfitrion = ({ navigation }) => {
-    const [AnfitrionEmail, onChangeAnfEmail] = React.useState('');
-    const [AnfitrionName, onChangeAnfName] = React.useState('');
-    const [AnfitrionPass, onChangeAnfPass] = React.useState('');
+    const [AnfitrionEmail, onChangeAnfEmail] = React.useState();
+    const [AnfitrionName, onChangeAnfName] = React.useState();
+    const [AnfitrionPass, onChangeAnfPass] = React.useState();
     const isDarkMode = useColorScheme() === 'dark'
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
