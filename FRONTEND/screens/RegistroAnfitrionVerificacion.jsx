@@ -25,7 +25,7 @@ const RegistroAnfitrionVerificacion = ({ navigation }) => {
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
-                // onPress={() => navigation.navigate('RegistroCuidadorDetalle')}
+                onPress={() => navigation.navigate('RegistroAnfitrionDetalle')}
                 />
             </View>
 
