@@ -21,7 +21,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="CarouselIntro" component={CarouselIntro} />
+        <Stack.Screen name="CarouselIntro" component={CarouselIntro} />
         <Stack.Screen name="Bienvenidos" component={Bienvenidos}  />
         <Stack.Screen name="RegistroOpcion" component={RegistroOpcion} />
         <Stack.Screen name='RegistroAnfitrion' component={RegistroAnfitrion}/>
@@ -30,9 +30,9 @@ const MyStack = () => {
         <Stack.Screen name='RegistroAnfitrionDetalle' component={RegistroAnfitrionDetalle} />
         <Stack.Screen name='RegistroAnfitrionCasa' component={RegistroAnfitrionCasa}/>
         <Stack.Screen name='RegistroAnfitrionMascota' component={RegistroAnfitrionMascota} />
-        <Stack.Screen name='RegistroCuidadorVerificacion' component={RegistroCuidadorVerificacion} /> */}
-        {/* <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} /> */}
-        {/* <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/> */}
+        <Stack.Screen name='RegistroCuidadorVerificacion' component={RegistroCuidadorVerificacion} />
+        <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} />
+        <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/>
 
         
