@@ -25,6 +25,11 @@ const ownerSchema = new Schema({
     trim: true,
     enum: ['male', 'female', 'other']
   },
+  role: {
+    type: String,
+    enum: ['USER', 'ADMIN'],
+    default: 'USER'
+  },
   birthdate: {
     type: String,
     trim: true,
