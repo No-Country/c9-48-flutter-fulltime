@@ -1,24 +1,21 @@
 import * as React from 'react';
-import { View, Image, Button, StyleSheet, useColorScheme, Text, TextInput, Linking } from "react-native";
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { View, Image, Button, StyleSheet, Text, TextInput } from "react-native";
 
 
 const InicioSesion = ({ navigation }) => {
     const [userEmail, onChangeEmail] = React.useState();
-    const [AnfitrionName, onChangeAnfName] = React.useState();
     const [userPass, onChangeUserPass] = React.useState();
-    const isDarkMode = useColorScheme() === 'dark'
+    const Separator = () => <View style={styles.separator} />;
 
 
     return (
-        <View style={[styles.container, { backgroundColor: isDarkMode ? Colors.black : Colors.white, }]}>
-            <View style={styles.logoContainer}>
+        <View style={styles.container}>
                 <Image
                     style={styles.logo}
-                    resizeMode='center'
+                    resizeMode='cover'
                     source={require('../assets/Logo.png')} />
-            </View>
             <View>
+
                 <Text style={styles.formTitles}>Email</Text>
                 <TextInput
                     style={styles.input}
@@ -27,25 +24,48 @@ const InicioSesion = ({ navigation }) => {
                     placeholder="Ex: abc@example.com " />
                 <Text style={styles.formTitles}>Contraseña</Text>
                 <TextInput
-                    style={[styles.input, { marginBottom: 0 }]}
+                    style={styles.input}
                     onSubmitEditing={onChangeUserPass}
                     value={userPass}
                     placeholder="*******" />
-                <Text style={{ marginBottom: 12 }}>Mínimo ingresa 7 caracteres</Text>
             </View>
 
-            <View>
-                <Button
-                    title='Iniciar Sesion'
-                    color='#FF5E5E'
-                // onPress={() => navigation.navigate('Dashboard')}
-                />
-                <View>
-                    <Text onPress={() => navigation.navigate('InicioSesion')}>
-                        ¿Olvidaste tu contaseña?
-                    </Text>
-                </View>
+            <Button
+                title='Iniciar Sesion'
+                color='#FF5E5E'
+            // onPress={() => navigation.navigate('Dashboard')}
+            />
+            <View style={styles.ForgotPass}>
+                <Text onPress={() => navigation.navigate('InicioSesion')}>
+                    ¿Olvidaste tu contaseña?
+                </Text>
+            </View>
 
+            <View style={{ flexDirection: 'row' }}>
+                <View style={styles.linesContainer}>
+                    <Separator />
+                </View>
+                <Text>o regístrate con </Text>
+                <View style={styles.linesContainer}>
+                    <Separator />
+                </View>
+            </View>
+            <View style={styles.socialsContainer}>
+                <Text>Logo 1</Text>
+                <Text>Logo 2</Text>
+                <Text>Logo 3</Text>
+            </View>
+            <View style={{ flex: 2 }}>
+                <View style={styles.termsContainer}>
+                    <Text
+                    // onPress={() => navigation.navigate('TermsOfSerivice')}
+                    >
+                        Term Of Service </Text>
+                    <Text
+                    // onPress={() => navigation.navigate('PrivacyPolicy')}
+                    >
+                        Privacy Policy </Text>
+                </View>
             </View>
         </View>
     )
@@ -54,38 +74,15 @@ const InicioSesion = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-        padding: 20,
-        justifyContent: 'center',
+        flex: 1,
+        padding: '5%',
         alignItems: 'center',
-        backgroundColor: 'black'
-    },
-    logoContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '40%',
-        width: '70%',
-        // backgroundColor:'grey'
+        justifyContent: 'flex-start',
+        // backgroundColor: '#8a2be2'
     },
     logo: {
-        height: '100%',
-        width: '100%'
-    },
-    buttonStyle: {
-        paddingHorizontal: '20%',
-        marginVertical: 8
-    },
-    RegistroTitle: {
-        color: '#FF5E5E',
-        fontWeight: 700,
-        fontSize: 32,
-        // fontFamily: 'Inter'
-    },
-    RegistroSub: {
-        color: 'black',
-        fontWeight: 700,
-        fontSize: 16,
-        marginBottom: 12
-        // fontFamily: 'Roboto'
+        width: 167,
+        height: 133
     },
     formTitles: {
         color: 'black',
@@ -93,13 +90,42 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     input: {
-        height: 40,
+        height: 56,
+        width: 278,
         margin: 12,
         borderWidth: 1.5,
         borderColor: '#575DFB',
         borderRadius: 16,
         padding: 10,
     },
+    ForgotPass: {
+        alignItems: 'flex-end',
+        // backgroundColor: '#00ffff',
+        width: 350,
+        margin: 10,
+    },
+    separator: {
+        marginVertical: 10,
+        borderBottomColor: '#737373',
+        borderBottomWidth: 1,
+    },
+    linesContainer: {
+        width: 100,
+        marginHorizontal: 10
+    },
+    socialsContainer: {
+        flexDirection: 'row', 
+        justifyContent: 'space-evenly',  
+        margin: 20,
+        width: '100%',
+        // backgroundColor: 'green'
+    },
+    termsContainer: { alignItems: 'flex-end', 
+    width: '100%', 
+    flexDirection: 'row', 
+    justifyContent: 'space-evenly', 
+    // backgroundColor: 'pink', 
+    flex: 2 }
 
 });
 
