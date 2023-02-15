@@ -12,7 +12,7 @@ const RegistroCuidador = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
             <View>
-                <Text style={Styles.RegistroTitle}>Registro</Text>
+                <Text style={Styles.RegistroTitle}>Registro Cuidador</Text>
                 <Text style={Styles.RegistroSub}>Crea una cuenta para acceder a todas las funcionalidades de Mascotas Cuidadas!</Text>
             </View>
             <View>
