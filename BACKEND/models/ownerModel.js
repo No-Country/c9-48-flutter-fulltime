@@ -11,21 +11,23 @@ const ownerSchema = new Schema({
     trim: true,
     required: true
   },
+  password: {
+    type: String,
+    trim: true,
+    required: true
+  },
   phone: {
     type: Number,
     trim: true,
-    required: true
   },
   gender: {
     type: String,
     trim: true,
-    required: true,
     enum: ['male', 'female', 'other']
   },
   birthdate: {
-    type: Date,
+    type: String,
     trim: true,
-    required: true
   }
 })
 

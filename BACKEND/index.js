@@ -4,6 +4,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 dotenv.config();
+const connectionDB = require('./db/db')
+connectionDB()
 const port = process.env.PORT;
 const ownersRoutes = require('./routes/owners.routes');
 
