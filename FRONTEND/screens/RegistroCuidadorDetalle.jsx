@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
+import { Button, Text, TextInput, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { SelectList } from 'react-native-dropdown-select-list';
-import DatePicker from 'react-native-date-picker'
+import CheckBox from '@react-native-community/checkbox';
 
 
 
@@ -38,6 +38,19 @@ const RegistroCuidadorDetalle = ({ navigation }) => {
         { key: '8', value: 'H' },
         { key: '9', value: 'I' },
     ]
+    const [checkboxes, setCheckboxes] = React.useState([
+        { id: 1, label: 'Cuando sea', value: 'cuandosea', checked: false },
+        { id: 2, label: 'En dos meses', value: 'Endosmeses', checked: false },
+        { id: 3, label: 'El próximo mes', value: 'Elproximomes', checked: false },
+        { id: 4, label: 'Más adelante', value: 'Masadelante', checked: false },
+
+    ]);
+    const handleCheckboxToggle = (id) => {
+        const updatedCheckboxes = checkboxes.map((checkbox) =>
+            checkbox.id === id ? { ...checkbox, checked: !checkbox.checked } : checkbox
+        );
+        setCheckboxes(updatedCheckboxes);
+    };
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
             <View>
@@ -60,13 +73,36 @@ const RegistroCuidadorDetalle = ({ navigation }) => {
                     searchPlaceholder='Buscar'
                 />
                 <Separator />
+                
             </View>
             <View>
-                <Text styles={Styles.RegistroSubBlue}>¿Cuando quieres ir?</Text>
-                <Separator/>
+                    <Text style={Styles.RegistroSubBlue}>¿Cuando quieres ir?</Text>
+                <FlatList
+                    data={checkboxes}
+                    numColumns={2}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <View style={Styles.checkboxContainer}>
+                            <Text style={Styles.checkboxLabel}>{item.label}</Text>
+                            <CheckBox
+                                disabled={false}
+                                value={item.checked}
+                                onValueChange={() => handleCheckboxToggle(item.id)}
+                            />
+                        </View>
+                    )}
+                />
+                <Separator />
             </View>
 
             <View>
+                <Text style={Styles.RegistroSubBlue}>¿Cuál es tu experiencia con mascotas?</Text>
+                <TextInput
+                    style={Styles.input}
+                    // onSubmitEditing={onChangeCuiEmail}
+                    // value={CuidadorEmail}
+                    multiline={true}
+                    placeholder="Describe brevemente qué experiencia tienes con mascotas. ¿Has cuidado mascotas antes? ¿Qué tal ha sido?" />
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
@@ -79,6 +115,21 @@ const RegistroCuidadorDetalle = ({ navigation }) => {
 }
 
 const Styles = StyleSheet.create({
+    flatListContent: {
+        justifyContent: 'center',
+    },
+    checkboxContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: 4,
+    },
+    checkboxLabelContainer: {
+        marginLeft: 8,
+    },
+    checkboxLabel: {
+        fontSize: 16,
+    },
+
     RegistroTitle: {
         color: '#FF5E5E',
         fontWeight: 700,
@@ -105,7 +156,7 @@ const Styles = StyleSheet.create({
         fontSize: 16,
     },
     input: {
-        height: 40,
+        height: 100,
         margin: 12,
         borderWidth: 1.5,
         borderColor: '#575DFB',
