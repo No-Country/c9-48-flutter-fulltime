@@ -37,7 +37,7 @@ const RegistroCuidadorCasa = ({ navigation }) => {
             <Text style={Styles.RegistroTitle}>Encontrá hospedaje</Text>
                 <View>
                     <Text style={Styles.RegistroSubBlue}>Desde</Text>
-                    <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas cuidador.</Text>
+                    <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas hospedaje.</Text>
                     <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
                     <DatePicker
                         modal
@@ -56,7 +56,7 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                 </View>
                 <View>
                     <Text style={Styles.RegistroSubBlue}>Hasta</Text>
-                    <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas cuidador.</Text>
+                    <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas hospedaje.</Text>
                     <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
                     <DatePicker
                         modal
