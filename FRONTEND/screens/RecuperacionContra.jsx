@@ -4,21 +4,20 @@ import { View, Button, StyleSheet, Text, TextInput } from "react-native";
 
 const InicioSesion = ({ navigation }) => {
     const [userEmail, onChangeEmail] = React.useState();
-
     return (
         <View style={styles.container}>
             <View style={{ backgroundcolor: 'red', alignSelf: 'flex-start' }}>
                 <Button
                     title={String.fromCharCode(8592)}
-                // onPress={() => navigation.navigate('Bienvenidos')}
+                onPress={() => navigation.navigate('InicioSesion')}
                 />
             </View>
-            <View>
-                <Text styles={styles.formTitles}>¿Olvidaste tu contraseña?</Text>
-                <Text styles={styles.formSubs}>¡Recupera tu contraseña si la has olvidado!</Text>
+            <View style={{alignSelf:'flex-start' ,padding: 20}}>
+                <Text style={styles.formTitles}>¿Olvidaste tu contraseña?</Text>
+                <Text style={styles.formSubs}>¡Recupera tu contraseña si la has olvidado!</Text>
             </View>
             <View>
-                <Text style={styles.formTitles}>Email</Text>
+                <Text style={styles.formSubs}>Email</Text>
                 <TextInput
                     style={styles.input}
                     onSubmitEditing={onChangeEmail}
@@ -29,7 +28,7 @@ const InicioSesion = ({ navigation }) => {
             <Button
                 title='Enviar'
                 color='#FF5E5E'
-            // onPress={() => function email}
+            // onPress={() => function email recuperacion}
             />
         </View>
     )
@@ -44,19 +43,17 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         // backgroundColor: '#8a2be2'
     },
-    logo: {
-        width: 167,
-        height: 133
-    },
     formTitles: {
-        color: 'black',
-        fontWeight: 400,
-        fontSize: 16,
+        color: '#FF5E5E',
+        fontWeight: 700,
+        fontSize: 24,
+        // fontFamily: 'Inter'
     },
     formSubs: {
-        color: '#E94057',
+        color: 'black',
         fontWeight: 400,
-        fontSize: 14
+        fontSize: 14,
+        // fontFamily: 'Roboto'
     },
     input: {
         height: 56,
