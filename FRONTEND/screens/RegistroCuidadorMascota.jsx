@@ -2,24 +2,26 @@ import * as React from 'react'
 import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
-import ImageUploadBox from '../components/ImageUploadBox';
+import DatePicker from 'react-native-date-picker'
 
 
-const RegistroAnfitrionCasa = ({ navigation }) => {
+
+const RegistroCuidadorMascota = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
+    const [date, setDate] = React.useState(new Date())
+    const [open, setOpen] = React.useState(false)
     const isDarkMode = useColorScheme() === 'dark'
     const [checkboxes, setCheckboxes] = React.useState([
-        { id: 1, label: 'casa', value: 'casa', checked: false },
-        { id: 2, label: 'depto', value: 'depto', checked: false },
-        { id: 3, label: 'monoambiente', value: 'monoambiente', checked: false },
-        { id: 4, label: '2 ambientes', value: '2ambientes', checked: false },
-        { id: 5, label: '3 ambientes', value: '3ambientes', checked: false },
-        { id: 6, label: '4 ambientes o más', value: '4ambientes', checked: false },
-        { id: 7, label: 'TV', value: 'TV', checked: false },
-        { id: 8, label: 'balcón/patio', value: 'balcón/patio', checked: false },
-        { id: 9, label: 'terraza', value: 'terraza', checked: false },
-        { id: 10, label: 'jardín', value: 'jardín', checked: false },
-        { id: 11, label: 'piscina', value: 'piscina', checked: false }
+        { id: 1, label: 'Cualquier mascota', value: 'cualquiermascota', checked: false },
+        { id: 2, label: 'Gatos', value: 'gatos', checked: false },
+        { id: 3, label: 'Perros', value: 'perros', checked: false },
+        { id: 4, label: 'Peces', value: 'peces', checked: false },
+        { id: 5, label: 'Reptiles', value: 'reptiles', checked: false },
+        { id: 6, label: 'Gallinas', value: 'gallinas', checked: false },
+        { id: 7, label: 'Aves', value: 'aves', checked: false },
+        { id: 8, label: 'Caballos', value: 'caballos', checked: false },
+        { id: 9, label: 'Cobayo', value: 'cobayo', checked: false },
+        { id: 10, label: 'Conejos', value: 'conejos', checked: false },
     ]);
 
     const handleCheckboxToggle = (id) => {
@@ -31,15 +33,15 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
-            <View>
-                <Text style={Styles.RegistroTitle}>Encontrá un cuidador/a</Text>
-                <Text style={Styles.SubBlue}>Seleccioná las características de tu casa.</Text>
+            <Text style={Styles.RegistroTitle}>Encontrá hospedaje</Text>
+                <View>
+                <Text style={Styles.RegistroSubBlue}>Seleccioná tu preferencia de mascotas.</Text>
                 <FlatList
                     data={checkboxes}
                     numColumns={2}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
-                        <View style={Styles.checkboxContainer}>                        
+                        <View style={Styles.checkboxContainer}>
                             <Text style={Styles.checkboxLabel}>{item.label}</Text>
                             <CheckBox
                                 disabled={false}
@@ -49,20 +51,18 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
                         </View>
                     )}
                 />
+                <Separator/>
             </View>
             <View>
-                <Text style={Styles.SubBlue}>Fotos de mi casa</Text>
-                <Text style={Styles.RegistroSub}>Sube al menos 6 fotos de tu casa o depto. (No incluyas información sensible de tu domicilio).</Text>
-                <ImageUploadBox />
+                <Text>Imagen</Text>
             </View>
             <View>
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroAnfitrionMascota')}
+                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
                 />
             </View>
-
         </View>
     )
 }
@@ -96,7 +96,7 @@ const Styles = StyleSheet.create({
         // fontFamily: 'Roboto'
 
     },
-    SubBlue: {
+    RegistroSubBlue: {
         color: '#575DFB',
         fontWeight: 400,
         fontSize: 14,
@@ -123,4 +123,4 @@ const Styles = StyleSheet.create({
     }
 })
 
-export default RegistroAnfitrionCasa;
+export default RegistroCuidadorMascota;

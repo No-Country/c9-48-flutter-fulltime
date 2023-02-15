@@ -2,11 +2,14 @@ import * as React from 'react'
 import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
-import ImageUploadBox from '../components/ImageUploadBox';
+import DatePicker from 'react-native-date-picker'
 
 
-const RegistroAnfitrionCasa = ({ navigation }) => {
+
+const RegistroCuidadorCasa = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
+    const [date, setDate] = React.useState(new Date())
+    const [open, setOpen] = React.useState(false)
     const isDarkMode = useColorScheme() === 'dark'
     const [checkboxes, setCheckboxes] = React.useState([
         { id: 1, label: 'casa', value: 'casa', checked: false },
@@ -31,15 +34,55 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
+            <Text style={Styles.RegistroTitle}>Encontrá hospedaje</Text>
+                <View>
+                    <Text style={Styles.RegistroSubBlue}>Desde</Text>
+                    <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas hospedaje.</Text>
+                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
+                    <DatePicker
+                        modal
+                        mode='date'
+                        open={open}
+                        date={date}
+                        onConfirm={(date) => {
+                            setOpen(false)
+                            setDate(date)
+                        }}
+                        onCancel={() => {
+                            setOpen(false)
+                        }}
+                    />
+                    <Text>Fecha placeholder</Text>
+                </View>
+                <View>
+                    <Text style={Styles.RegistroSubBlue}>Hasta</Text>
+                    <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas hospedaje.</Text>
+                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
+                    <DatePicker
+                        modal
+                        mode='date'
+                        open={open}
+                        date={date}
+                        onConfirm={(date) => {
+                            setOpen(false)
+                            setDate(date)
+                        }}
+                        onCancel={() => {
+                            setOpen(false)
+                        }}
+                    />
+                    <Text>Fecha placeholder</Text>
+                    <Separator/>
+            </View>
             <View>
-                <Text style={Styles.RegistroTitle}>Encontrá un cuidador/a</Text>
-                <Text style={Styles.SubBlue}>Seleccioná las características de tu casa.</Text>
+                
+                <Text style={Styles.RegistroSubBlue}>Seleccioná tus preferencias hospedaje.</Text>
                 <FlatList
                     data={checkboxes}
                     numColumns={2}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
-                        <View style={Styles.checkboxContainer}>                        
+                        <View style={Styles.checkboxContainer}>
                             <Text style={Styles.checkboxLabel}>{item.label}</Text>
                             <CheckBox
                                 disabled={false}
@@ -51,15 +94,10 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
                 />
             </View>
             <View>
-                <Text style={Styles.SubBlue}>Fotos de mi casa</Text>
-                <Text style={Styles.RegistroSub}>Sube al menos 6 fotos de tu casa o depto. (No incluyas información sensible de tu domicilio).</Text>
-                <ImageUploadBox />
-            </View>
-            <View>
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroAnfitrionMascota')}
+                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
                 />
             </View>
 
@@ -96,7 +134,7 @@ const Styles = StyleSheet.create({
         // fontFamily: 'Roboto'
 
     },
-    SubBlue: {
+    RegistroSubBlue: {
         color: '#575DFB',
         fontWeight: 400,
         fontSize: 14,
@@ -123,4 +161,4 @@ const Styles = StyleSheet.create({
     }
 })
 
-export default RegistroAnfitrionCasa;
+export default RegistroCuidadorCasa;
