@@ -6,23 +6,22 @@ import DatePicker from 'react-native-date-picker'
 
 
 
-const RegistroCuidadorCasa = ({ navigation }) => {
+const RegistroCuidadorMascota = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
     const [date, setDate] = React.useState(new Date())
     const [open, setOpen] = React.useState(false)
     const isDarkMode = useColorScheme() === 'dark'
     const [checkboxes, setCheckboxes] = React.useState([
-        { id: 1, label: 'casa', value: 'casa', checked: false },
-        { id: 2, label: 'depto', value: 'depto', checked: false },
-        { id: 3, label: 'monoambiente', value: 'monoambiente', checked: false },
-        { id: 4, label: '2 ambientes', value: '2ambientes', checked: false },
-        { id: 5, label: '3 ambientes', value: '3ambientes', checked: false },
-        { id: 6, label: '4 ambientes o más', value: '4ambientes', checked: false },
-        { id: 7, label: 'TV', value: 'TV', checked: false },
-        { id: 8, label: 'balcón/patio', value: 'balcón/patio', checked: false },
-        { id: 9, label: 'terraza', value: 'terraza', checked: false },
-        { id: 10, label: 'jardín', value: 'jardín', checked: false },
-        { id: 11, label: 'piscina', value: 'piscina', checked: false }
+        { id: 1, label: 'Cualquier mascota', value: 'cualquiermascota', checked: false },
+        { id: 2, label: 'Gatos', value: 'gatos', checked: false },
+        { id: 3, label: 'Perros', value: 'perros', checked: false },
+        { id: 4, label: 'Peces', value: 'peces', checked: false },
+        { id: 5, label: 'Reptiles', value: 'reptiles', checked: false },
+        { id: 6, label: 'Gallinas', value: 'gallinas', checked: false },
+        { id: 7, label: 'Aves', value: 'aves', checked: false },
+        { id: 8, label: 'Caballos', value: 'caballos', checked: false },
+        { id: 9, label: 'Cobayo', value: 'cobayo', checked: false },
+        { id: 10, label: 'Conejos', value: 'conejos', checked: false },
     ]);
 
     const handleCheckboxToggle = (id) => {
@@ -36,47 +35,7 @@ const RegistroCuidadorCasa = ({ navigation }) => {
         <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
             <Text style={Styles.RegistroTitle}>Encontrá hospedaje</Text>
                 <View>
-                    <Text style={Styles.RegistroSubBlue}>Desde</Text>
-                    <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas hospedaje.</Text>
-                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
-                    <DatePicker
-                        modal
-                        mode='date'
-                        open={open}
-                        date={date}
-                        onConfirm={(date) => {
-                            setOpen(false)
-                            setDate(date)
-                        }}
-                        onCancel={() => {
-                            setOpen(false)
-                        }}
-                    />
-                    <Text>Fecha placeholder</Text>
-                </View>
-                <View>
-                    <Text style={Styles.RegistroSubBlue}>Hasta</Text>
-                    <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas hospedaje.</Text>
-                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
-                    <DatePicker
-                        modal
-                        mode='date'
-                        open={open}
-                        date={date}
-                        onConfirm={(date) => {
-                            setOpen(false)
-                            setDate(date)
-                        }}
-                        onCancel={() => {
-                            setOpen(false)
-                        }}
-                    />
-                    <Text>Fecha placeholder</Text>
-                    <Separator/>
-            </View>
-            <View>
-                
-                <Text style={Styles.RegistroSubBlue}>Seleccioná tus preferencias hospedaje.</Text>
+                <Text style={Styles.RegistroSubBlue}>Seleccioná tu preferencia de mascotas.</Text>
                 <FlatList
                     data={checkboxes}
                     numColumns={2}
@@ -92,6 +51,10 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                         </View>
                     )}
                 />
+                <Separator/>
+            </View>
+            <View>
+                <Text>Imagen</Text>
             </View>
             <View>
                 <Button
@@ -100,7 +63,6 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                     onPress={() => navigation.navigate('RegistroCuidadorMascota')}
                 />
             </View>
-
         </View>
     )
 }
@@ -161,4 +123,4 @@ const Styles = StyleSheet.create({
     }
 })
 
-export default RegistroCuidadorCasa;
+export default RegistroCuidadorMascota;
