@@ -32,7 +32,7 @@ const Bienvenidos = ({navigation}) => {
                 <Button
                     title='Inicia Sesión'
                     color='#FF5E5E'
-                    // onPress={() => navigation.navigate('CarouselIntro')}
+                    onPress={() => navigation.navigate('InicioSesion')}
                 />
             </View>
             
