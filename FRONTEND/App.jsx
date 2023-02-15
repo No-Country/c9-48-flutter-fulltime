@@ -32,7 +32,7 @@ const MyStack = () => {
         <Stack.Screen name='RegistroAnfitrionMascota' component={RegistroAnfitrionMascota} />
         <Stack.Screen name='RegistroCuidadorVerificacion' component={RegistroCuidadorVerificacion} /> */}
         {/* <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} /> */}
-        <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
+        {/* <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/> */}
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/>
 
         
