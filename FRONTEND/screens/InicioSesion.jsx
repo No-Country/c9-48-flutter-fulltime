@@ -10,6 +10,13 @@ const InicioSesion = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            <View style={{backgroundcolor: 'red', alignSelf: 'flex-start'}}>
+                <Button
+                    title={String.fromCharCode(8592)}
+                // onPress={() => navigation.navigate('Bienvenidos')}
+                />
+
+            </View>
                 <Image
                     style={styles.logo}
                     resizeMode='cover'
@@ -57,11 +64,12 @@ const InicioSesion = ({ navigation }) => {
             </View>
             <View style={{ flex: 2 }}>
                 <View style={styles.termsContainer}>
-                    <Text
+                    <Text 
+                    style={styles.formSubs}
                     // onPress={() => navigation.navigate('TermsOfSerivice')}
                     >
                         Term Of Service </Text>
-                    <Text
+                    <Text style={styles.formSubs}
                     // onPress={() => navigation.navigate('PrivacyPolicy')}
                     >
                         Privacy Policy </Text>
@@ -88,6 +96,11 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 400,
         fontSize: 16,
+    },
+    formSubs: {
+        color: '#E94057',
+        fontWeight: 400,
+        fontSize: 14
     },
     input: {
         height: 56,
@@ -120,7 +133,8 @@ const styles = StyleSheet.create({
         width: '100%',
         // backgroundColor: 'green'
     },
-    termsContainer: { alignItems: 'flex-end', 
+    termsContainer: { 
+    alignItems: 'flex-end',
     width: '100%', 
     flexDirection: 'row', 
     justifyContent: 'space-evenly', 
