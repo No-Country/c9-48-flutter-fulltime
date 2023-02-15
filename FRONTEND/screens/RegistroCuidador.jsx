@@ -40,7 +40,7 @@ const RegistroCuidador = ({ navigation }) => {
                 <Button
                     title='Registrarme'
                     color='#FF5E5E'
-                // onPress={() => navigation.navigate('RegistroCuidadorDetalle')}
+                onPress={() => navigation.navigate('RegistroCuidadorVerificacion')}
                 />
             </View>
             <View>
