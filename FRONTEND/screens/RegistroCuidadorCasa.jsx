@@ -97,7 +97,7 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
-                    // onPress={() => navigation.navigate('RegistroCuidadorMascota')}
+                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
                 />
             </View>
 
