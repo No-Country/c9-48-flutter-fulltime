@@ -3,16 +3,14 @@ import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonButton from '../components/CommonButton';
 
-
-
 const RegistroAnfitrion = ({ navigation }) => {
     const [AnfitrionEmail, onChangeAnfEmail] = React.useState();
     const [AnfitrionName, onChangeAnfName] = React.useState();
     const [AnfitrionPass, onChangeAnfPass] = React.useState();
     const isDarkMode = useColorScheme() === 'dark'
     return (
-        <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
-            <View>
+        <View style={Styles.container}>
+            <View style={{ alignItems: 'flex-start' }}>
                 <Text style={Styles.RegistroTitle}>Registro Anfitrión</Text>
                 <Text style={Styles.RegistroSub}>Crea una cuenta para acceder a todas las funcionalidades de Mascotas Cuidadas!</Text>
             </View>
@@ -37,7 +35,7 @@ const RegistroAnfitrion = ({ navigation }) => {
                     placeholder="*******"/>
                 <Text style={{marginBottom: 12}}>Mínimo ingresa 7 caracteres</Text>
             </View>
-            <View>
+            <View style={{padding: 20}}>
                 <CommonButton 
                 buttonText='Registrarme'
                 onPress={() => navigation.navigate('RegistroAnfitrionVerificacion')}
@@ -55,6 +53,13 @@ const RegistroAnfitrion = ({ navigation }) => {
 }
 
 const Styles = StyleSheet.create ({
+    container: {
+        flex: 1,
+        padding: '5%',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        // backgroundColor: 'pink'
+    },
     RegistroTitle: {
         color: '#FF5E5E',
         fontWeight: 700,
@@ -65,7 +70,7 @@ const Styles = StyleSheet.create ({
         color: 'black',
         fontWeight: 700,
         fontSize: 16,
-        marginBottom: 12
+        marginBottom: 12,
         // fontFamily: 'Roboto'
     },
     formTitles: {
@@ -74,13 +79,15 @@ const Styles = StyleSheet.create ({
         fontSize: 16,
     },
     input: {
-        height: 40,
+        height: 56,
+        width: 278,
         margin: 12,
         borderWidth: 1.5,
         borderColor: '#575DFB',
         borderRadius: 16,
         padding: 10,
     },
+
 
 })
 
