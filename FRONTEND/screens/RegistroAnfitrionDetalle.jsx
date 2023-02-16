@@ -1,16 +1,10 @@
 import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
+import { Text, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { SelectList } from 'react-native-dropdown-select-list';
-import  DatePicker  from 'react-native-date-picker'
 import CalendarRegister from '../components/CalendarRegister'
 import CommonButton from '../components/CommonButton';
 import CountryPicker from '../components/CountryPicker';
 import CityPicker from '../components/CityPicker';
-
-
-
-
 
 const RegistroAnfitrionDetalle = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;

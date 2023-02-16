@@ -1,15 +1,10 @@
 import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
+import { Text, TextInput, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { SelectList } from 'react-native-dropdown-select-list';
 import CheckBox from '@react-native-community/checkbox';
 import CountryPicker from '../components/CountryPicker';
 import CityPicker from '../components/CityPicker';
 import CommonButton from '../components/CommonButton';
-
-
-
-
 
 const RegistroCuidadorDetalle = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
