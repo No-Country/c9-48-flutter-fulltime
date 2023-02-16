@@ -3,6 +3,7 @@ import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
 import DatePicker from 'react-native-date-picker'
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -56,12 +57,8 @@ const RegistroCuidadorMascota = ({ navigation }) => {
             <View>
                 <Text>Imagen</Text>
             </View>
-            <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
-                />
+            <View style={{ alignItems: 'center' }}>
+                <CommonButton onPress={() => navigation.navigate('RegistroCuidadorMascota')} />
             </View>
         </View>
     )
