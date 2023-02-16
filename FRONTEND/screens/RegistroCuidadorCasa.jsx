@@ -2,14 +2,18 @@ import * as React from 'react'
 import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
-import DatePicker from 'react-native-date-picker'
-
+import CalendarRegister from '../components/CalendarRegister';
+import CommonButton from '../components/CommonButton';
 
 
 const RegistroCuidadorCasa = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
-    const [date, setDate] = React.useState(new Date())
-    const [open, setOpen] = React.useState(false)
+    const [dateFromCui, setDateFromCui] = React.useState(new Date())
+    const [fechaIngresoCui, setFechaIngresoCui] = React.useState("DD/MM/AAAA")
+
+    const [dateToCui, setDateToCui] = React.useState(new Date())
+    const [fechaEgresoCui, setFechaEgresoCui] = React.useState("DD/MM/AAAA")
+
     const isDarkMode = useColorScheme() === 'dark'
     const [checkboxes, setCheckboxes] = React.useState([
         { id: 1, label: 'casa', value: 'casa', checked: false },
@@ -38,40 +42,12 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                 <View>
                     <Text style={Styles.RegistroSubBlue}>Desde</Text>
                     <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas hospedaje.</Text>
-                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
-                    <DatePicker
-                        modal
-                        mode='date'
-                        open={open}
-                        date={date}
-                        onConfirm={(date) => {
-                            setOpen(false)
-                            setDate(date)
-                        }}
-                        onCancel={() => {
-                            setOpen(false)
-                        }}
-                    />
-                    <Text>Fecha placeholder</Text>
+                    <CalendarRegister date={dateFromCui} setDate={setDateFromCui} buttonTitle={fechaIngresoCui} setButtonTitle={setFechaIngresoCui} />
                 </View>
                 <View>
                     <Text style={Styles.RegistroSubBlue}>Hasta</Text>
                     <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas hospedaje.</Text>
-                    <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
-                    <DatePicker
-                        modal
-                        mode='date'
-                        open={open}
-                        date={date}
-                        onConfirm={(date) => {
-                            setOpen(false)
-                            setDate(date)
-                        }}
-                        onCancel={() => {
-                            setOpen(false)
-                        }}
-                    />
-                    <Text>Fecha placeholder</Text>
+                    <CalendarRegister date={dateToCui} setDate={setDateToCui} buttonTitle={fechaEgresoCui} setButtonTitle={setFechaEgresoCui} />
                     <Separator/>
             </View>
             <View>
@@ -94,11 +70,12 @@ const RegistroCuidadorCasa = ({ navigation }) => {
                 />
             </View>
             <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
-                />
+                <Text>Fecha de Ingreso {fechaIngresoCui}</Text>
+                <Text>Fecha de Egreso {fechaEgresoCui}</Text>
+                <View style={{ alignItems: 'center' }}>
+                    <CommonButton onPress={() => navigation.navigate('RegistroCuidadorMascota')} />
+                </View>
+                
             </View>
 
         </View>

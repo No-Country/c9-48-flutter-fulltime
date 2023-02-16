@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -10,12 +11,10 @@ const RegistroCuidador = ({ navigation }) => {
     const [CuidadorPass, onChangeCuiPass] = React.useState();
     const isDarkMode = useColorScheme() === 'dark'
     return (
-        <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
-            <View>
+        <View style={Styles.container}>
+            <View style={{alignItems: 'flex-start'}}>
                 <Text style={Styles.RegistroTitle}>Registro Cuidador</Text>
                 <Text style={Styles.RegistroSub}>Crea una cuenta para acceder a todas las funcionalidades de Mascotas Cuidadas!</Text>
-            </View>
-            <View>
                 <Text style={Styles.formTitles}>Email</Text>
                 <TextInput
                     style={Styles.input}
@@ -36,15 +35,16 @@ const RegistroCuidador = ({ navigation }) => {
                     placeholder="*******" />
                 <Text style={{ marginBottom: 12 }}>Mínimo ingresa 7 caracteres</Text>
             </View>
-            <View>
-                <Button
-                    title='Registrarme'
-                    color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroCuidadorVerificacion')}
+            <View style={{ padding: 20 }}>
+                <CommonButton
+                buttonText={'Registrarme'}
+                    onPress={() => navigation.navigate('RegistroCuidadorVerificacion')}
                 />
             </View>
-            <View>
-                <Text>¿Ya tienes cuenta? Login</Text>
+            <View style={{flexDirection: 'row'}}>
+                <Text onPress={() => navigation.navigate('InicioSesion')}>¿Ya tienes cuenta? </Text>
+                <Text style={{ color: '#575DFB'}}
+                onPress={() => navigation.navigate('InicioSesion')}>Login</Text>
             </View>
 
         </View>
@@ -52,6 +52,13 @@ const RegistroCuidador = ({ navigation }) => {
 }
 
 const Styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        padding: '5%',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        // backgroundColor: 'pink'
+    },
     RegistroTitle: {
         color: '#FF5E5E',
         fontWeight: 700,
@@ -62,7 +69,7 @@ const Styles = StyleSheet.create({
         color: 'black',
         fontWeight: 700,
         fontSize: 16,
-        marginBottom: 12
+        marginBottom: 12,
         // fontFamily: 'Roboto'
     },
     formTitles: {
@@ -71,7 +78,8 @@ const Styles = StyleSheet.create({
         fontSize: 16,
     },
     input: {
-        height: 40,
+        height: 56,
+        width: 278,
         margin: 12,
         borderWidth: 1.5,
         borderColor: '#575DFB',

@@ -3,7 +3,7 @@ import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
 import ImageUploadBox from '../components/ImageUploadBox';
-
+import CommonButton from '../components/CommonButton';
 
 const RegistroAnfitrionCasa = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
@@ -55,11 +55,10 @@ const RegistroAnfitrionCasa = ({ navigation }) => {
                 <Text style={Styles.RegistroSub}>Sube al menos 6 fotos de tu casa o depto. (No incluyas información sensible de tu domicilio).</Text>
                 <ImageUploadBox />
             </View>
-            <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroAnfitrionMascota')}
+            <View style={{ alignItems: 'center' }} >
+                <CommonButton
+                    onPress={() => navigation.navigate('RegistroAnfitrionMascota')}
+
                 />
             </View>
 

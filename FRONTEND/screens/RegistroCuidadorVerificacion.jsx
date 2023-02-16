@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -8,7 +9,7 @@ const RegistroCuidadorVerificacion = ({ navigation }) => {
 
     const isDarkMode = useColorScheme() === 'dark'
     return (
-        <View style={{ flex: 1, backgroundColor: isDarkMode ? Colors.black : Colors.white, padding: '5%' }}>
+        <View style={Styles.container}>
             <View>
                 <Text style={Styles.RegistroTitle}>Registro Cuidador</Text>
                 <Text style={Styles.RegistroSub}>¡Hemos enviado un correo electrónico a su cuenta con un código de verificación!</Text>
@@ -22,11 +23,9 @@ const RegistroCuidadorVerificacion = ({ navigation }) => {
                     placeholder="Ex: 123456" />
             </View>
             <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                    onPress={() => navigation.navigate('RegistroCuidadorDetalle')}
-                />
+                <CommonButton
+                    onPress={() => navigation.navigate('RegistroCuidadorDetalle')} 
+                    />
             </View>
 
         </View>
@@ -34,6 +33,13 @@ const RegistroCuidadorVerificacion = ({ navigation }) => {
 }
 
 const Styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: '5%',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        // backgroundColor: 'pink'
+    },
     RegistroTitle: {
         color: '#FF5E5E',
         fontWeight: 700,
@@ -44,7 +50,7 @@ const Styles = StyleSheet.create({
         color: 'black',
         fontWeight: 700,
         fontSize: 16,
-        marginBottom: 12
+        marginBottom: 12,
         // fontFamily: 'Roboto'
     },
     formTitles: {
@@ -53,7 +59,8 @@ const Styles = StyleSheet.create({
         fontSize: 16,
     },
     input: {
-        height: 40,
+        height: 56,
+        width: 278,
         margin: 12,
         borderWidth: 1.5,
         borderColor: '#575DFB',
