@@ -41,11 +41,10 @@ const RegistroAnfitrion = ({ navigation }) => {
                 onPress={() => navigation.navigate('RegistroAnfitrionVerificacion')}
                 />
             </View>
-            <View>
-                <Text
-                    onPress={() => navigation.navigate('InicioSesion')}>
-                    ¿Ya tienes cuenta? Login
-                    </Text>
+            <View style={{ flexDirection: 'row' }}>
+                <Text onPress={() => navigation.navigate('InicioSesion')}>¿Ya tienes cuenta? </Text>
+                <Text style={{ color: '#575DFB' }}
+                    onPress={() => navigation.navigate('InicioSesion')}>Login</Text>
             </View>
         
         </View>
