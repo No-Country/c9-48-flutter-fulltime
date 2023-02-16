@@ -5,6 +5,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 import CheckBox from '@react-native-community/checkbox';
 import CountryPicker from '../components/CountryPicker';
 import CityPicker from '../components/CityPicker';
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -71,11 +72,9 @@ const RegistroCuidadorDetalle = ({ navigation }) => {
                     />
                 <Text>Pais Seleccionado {selectedCuiPais}</Text>
                 <Text>Ciudad Seleccionada {selectedCuiCiudad}  </Text>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                    onPress={() => navigation.navigate('RegistroCuidadorCasa')}
-                />
+                <View style={{ alignItems: 'center' }}>
+                <CommonButton onPress={() => navigation.navigate('RegistroCuidadorCasa')} />
+                </View>
             </View>
 
         </View>
