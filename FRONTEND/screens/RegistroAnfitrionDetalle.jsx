@@ -11,10 +11,18 @@ import  DatePicker  from 'react-native-date-picker'
 const RegistroAnfitrionDetalle = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
     const [selected, setSelected] = React.useState('');
+
     const isDarkMode = useColorScheme() === 'dark'
 
-    const [date, setDate] = React.useState(new Date())
-    const [open, setOpen] = React.useState(false)
+    const [dateFrom, setDateFrom] = React.useState(new Date())
+    const [openFrom, setOpenFrom] = React.useState(false)
+
+    const [dateTo, setDateTo] = React.useState(new Date())
+    const [openTo, setOpenTo] = React.useState(false)
+    
+    const [buttonTextFrom, setButtonTextFrom] = React.useState("DD/MM/AAAA")
+    const [buttonTextTo, setButtonTextTo] = React.useState("DD/MM/AAAA")
+
 
     const dataCountries = [
         { key: '1', value: 'Argentina'},
@@ -64,40 +72,41 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
             <View>
                 <Text style={Styles.DesdeHasta}>Desde</Text>
                 <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas cuidador.</Text>
-                <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
+                <Button title={buttonTextFrom} onPress={() => setOpenFrom(true)} />
                 <DatePicker
                     modal
+                    locale='es_ES'
                     mode='date'
-                    open={open}
-                    date={date}
-                    onConfirm={(date) => {
-                        setOpen(false)
-                        setDate(date)
+                    open={openFrom}
+                    date={dateFrom}
+                    onConfirm={(dateFrom) => {
+                        setOpenFrom(false)
+                        setDateFrom(dateFrom)
+                        setButtonTextFrom(dateFrom.toLocaleString("fr-FR").split(',')[0])
                     }}
                     onCancel={() => {
-                        setOpen(false)
+                        setOpenFrom(false)
                     }}
                 />
-                <Text>Fecha placeholder</Text>
             </View>
             <View>
                 <Text style={Styles.DesdeHasta}>Hasta</Text>
                 <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas cuidador.</Text>
-                <Button title="DD/MM/AAAA" onPress={() => setOpen(true)} />
+                <Button title={buttonTextTo} onPress={() => setOpenTo(true)} />
                 <DatePicker
                     modal
                     mode='date'
-                    open={open}
-                    date={date}
-                    onConfirm={(date) => {
-                        setOpen(false)
-                        setDate(date)
+                    open={openTo}
+                    date={dateTo}
+                    onConfirm={(dateTo) => {
+                        setOpenTo(false)
+                        setDateTo(dateTo)
+                        setButtonTextTo(dateTo.toLocaleString().split(',')[0])
                     }}
                     onCancel={() => {
-                        setOpen(false)
+                        setOpenTo(false)
                     }}
                 />
-                <Text>Fecha placeholder</Text>
                 <Separator/>
             </View>
             <View>
