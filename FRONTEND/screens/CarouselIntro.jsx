@@ -119,20 +119,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: 20
     },
-    Empezarbutton: {
-        backgroundColor: "#575dfb",
-        padding: 10,
-        borderRadius: 5
-    },
-    EmpezarButtonText: {
-        color: "#f4f5ff",
-        fontWeight: "bold",
-        textAlign: "center",
-        borderRadius: 100,
-        paddingHorizontal: 80,
-        paddingVertical: 10,
-    },
-
     OmitirButton: {
         backgroundColor: "blue",
         padding: 10,

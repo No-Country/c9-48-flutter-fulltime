@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Image, Button, StyleSheet, useColorScheme } from "react-native";
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from '../components/CommonButton';
 
 
 const Bienvenidos = ({navigation}) => {
@@ -19,19 +20,17 @@ const Bienvenidos = ({navigation}) => {
                     style={styles.logo}
                     source={require('../assets/Logo.png')} />
             </View>
-            <View style={styles.buttonStyle}>
-                <Button
-                    title='Crear Cuenta'
-                    color='#575DFB'
+            <View>
+                <CommonButton
+                    buttonText={'Crear Cuenta'}
                     onPress={() => navigation.navigate('RegistroOpcion')}
-                
                 />
 
             </View>
-            <View style={styles.buttonStyle}>
-                <Button
-                    title='Inicia Sesión'
-                    color='#FF5E5E'
+            <View >
+                <CommonButton
+                    buttonText={'Inicia Sesión'}
+                    ButtonColor={style.blue}
                     onPress={() => navigation.navigate('InicioSesion')}
                 />
             </View>
@@ -43,7 +42,6 @@ const Bienvenidos = ({navigation}) => {
 const styles = StyleSheet.create ({
     container: {
         flex: 1,
-
     },
     logoContainer: {
         justifyContent: 'center',
@@ -54,10 +52,7 @@ const styles = StyleSheet.create ({
     width: '65%',
     height: '65%',
     },
-    buttonStyle: {
-        paddingHorizontal: '20%',
-        marginVertical: 8
-    }
+
 
 });
 
