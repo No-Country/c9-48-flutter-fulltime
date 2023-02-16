@@ -4,13 +4,13 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { SelectList } from 'react-native-dropdown-select-list';
 import  DatePicker  from 'react-native-date-picker'
 import CalendarRegister from '../components/CalendarRegister'
+import CommonButton from '../components/CommonButton';
 
 
 
 
 
 const RegistroAnfitrionDetalle = ({ navigation }) => {
-
     const Separator = () => <View style={Styles.separator} />;
     const [selected, setSelected] = React.useState('');
     
@@ -82,12 +82,8 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
                 <Text>Fecha de Ingreso {fechaIngreso}</Text>
                 <Text>Fecha de Egreso {fechaEgreso}</Text>
             </View>
-            <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                onPress={() =>  navigation.navigate('RegistroAnfitrionCasa')}
-                />
+            <View style={{alignItems: 'center'}}>
+                <CommonButton onPress={() => navigation.navigate('RegistroAnfitrionCasa')} />
             </View>
 
         </View>
