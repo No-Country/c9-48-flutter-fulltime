@@ -3,6 +3,7 @@ import { Button, Text, View, useColorScheme, StyleSheet, FlatList } from 'react-
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
 import CalendarRegister from '../components/CalendarRegister';
+import CommonButton from '../components/CommonButton';
 
 
 const RegistroCuidadorCasa = ({ navigation }) => {
@@ -71,11 +72,10 @@ const RegistroCuidadorCasa = ({ navigation }) => {
             <View>
                 <Text>Fecha de Ingreso {fechaIngresoCui}</Text>
                 <Text>Fecha de Egreso {fechaEgresoCui}</Text>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                    onPress={() => navigation.navigate('RegistroCuidadorMascota')}
-                />
+                <View style={{ alignItems: 'center' }}>
+                    <CommonButton onPress={() => navigation.navigate('RegistroCuidadorMascota')} />
+                </View>
+                
             </View>
 
         </View>
