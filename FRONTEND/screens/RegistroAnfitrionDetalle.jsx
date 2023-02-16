@@ -22,7 +22,6 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
     const [dateTo, setDateTo] = React.useState(new Date())
     const [fechaEgreso, setFechaEgreso] = React.useState("DD/MM/AAAA")
     
-    const DatesChoosen = () => {<View></View>};
 
     const dataCountries = [
         { key: '1', value: 'Argentina'},
@@ -78,8 +77,8 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
                 <Text style={Styles.DesdeHasta}>Hasta</Text>
                 <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas cuidador.</Text>
                 <CalendarRegister date={dateTo} setDate={setDateTo} buttonTitle={fechaEgreso} setButtonTitle={setFechaEgreso} />
-                
                 <Separator/>
+
                 <Text>Fecha de Ingreso {fechaIngreso}</Text>
                 <Text>Fecha de Egreso {fechaEgreso}</Text>
             </View>
@@ -87,14 +86,7 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
                 <Button
                     title='Siguiente'
                     color='#FF5E5E'
-                onPress={
-                    () => {
-                        // navigation.navigate('RegistroAnfitrionCasa');
-                        <DatesChoosen />
-                        
-                        
-                }        
-            }
+                onPress={() =>  navigation.navigate('RegistroAnfitrionCasa')}
                 />
             </View>
 

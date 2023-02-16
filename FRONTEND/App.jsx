@@ -39,7 +39,6 @@ const MyStack = () => {
         <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} />
         <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/> */}
-
         
       </Stack.Navigator>
     </NavigationContainer>
