@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Button, useColorScheme } from "react-native";
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from "../components/CommonButton";
 
 const CarouselIntro = ({navigation}) => {
     const isDarkMode = useColorScheme() === 'dark';
@@ -87,7 +88,7 @@ const CarouselIntro = ({navigation}) => {
                 ))}
             </View>
             <View style={{ position: "absolute", bottom: 80, flexDirection: "row", alignSelf: "center" }}>
-                {EmpezarButton()}
+                <CommonButton onPress={() => navigation.navigate('Bienvenidos')} ButtonColor={style.blue} />
             </View>
         </View>
     );
@@ -118,20 +119,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: 20
     },
-    Empezarbutton: {
-        backgroundColor: "#575dfb",
-        padding: 10,
-        borderRadius: 5
-    },
-    EmpezarButtonText: {
-        color: "#f4f5ff",
-        fontWeight: "bold",
-        textAlign: "center",
-        borderRadius: 100,
-        paddingHorizontal: 80,
-        paddingVertical: 10,
-    },
-
     OmitirButton: {
         backgroundColor: "blue",
         padding: 10,

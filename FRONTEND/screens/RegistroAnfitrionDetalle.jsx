@@ -3,6 +3,8 @@ import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { SelectList } from 'react-native-dropdown-select-list';
 import  DatePicker  from 'react-native-date-picker'
+import CalendarRegister from '../components/CalendarRegister'
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -11,18 +13,15 @@ import  DatePicker  from 'react-native-date-picker'
 const RegistroAnfitrionDetalle = ({ navigation }) => {
     const Separator = () => <View style={Styles.separator} />;
     const [selected, setSelected] = React.useState('');
-
-    const isDarkMode = useColorScheme() === 'dark'
-
-    const [dateFrom, setDateFrom] = React.useState(new Date())
-    const [openFrom, setOpenFrom] = React.useState(false)
-
-    const [dateTo, setDateTo] = React.useState(new Date())
-    const [openTo, setOpenTo] = React.useState(false)
     
-    const [buttonTextFrom, setButtonTextFrom] = React.useState("DD/MM/AAAA")
-    const [buttonTextTo, setButtonTextTo] = React.useState("DD/MM/AAAA")
-
+    const isDarkMode = useColorScheme() === 'dark'
+    
+    const [dateFrom, setDateFrom] = React.useState(new Date())
+    const [fechaIngreso, setFechaIngreso] = React.useState("DD/MM/AAAA")
+    
+    const [dateTo, setDateTo] = React.useState(new Date())
+    const [fechaEgreso, setFechaEgreso] = React.useState("DD/MM/AAAA")
+    
 
     const dataCountries = [
         { key: '1', value: 'Argentina'},
@@ -72,49 +71,19 @@ const RegistroAnfitrionDetalle = ({ navigation }) => {
             <View>
                 <Text style={Styles.DesdeHasta}>Desde</Text>
                 <Text style={Styles.RegistroSub}>Ingresá la fecha de inicio en la que deseas que buscas cuidador.</Text>
-                <Button title={buttonTextFrom} onPress={() => setOpenFrom(true)} />
-                <DatePicker
-                    modal
-                    locale='es_ES'
-                    mode='date'
-                    open={openFrom}
-                    date={dateFrom}
-                    onConfirm={(dateFrom) => {
-                        setOpenFrom(false)
-                        setDateFrom(dateFrom)
-                        setButtonTextFrom(dateFrom.toLocaleString("fr-FR").split(',')[0])
-                    }}
-                    onCancel={() => {
-                        setOpenFrom(false)
-                    }}
-                />
+                <CalendarRegister date={dateFrom} setDate={setDateFrom} buttonTitle={fechaIngreso} setButtonTitle={setFechaIngreso}/>
             </View>
             <View>
                 <Text style={Styles.DesdeHasta}>Hasta</Text>
                 <Text style={Styles.RegistroSub}>Ingresá la fecha de cierre en la que deseas que buscas cuidador.</Text>
-                <Button title={buttonTextTo} onPress={() => setOpenTo(true)} />
-                <DatePicker
-                    modal
-                    mode='date'
-                    open={openTo}
-                    date={dateTo}
-                    onConfirm={(dateTo) => {
-                        setOpenTo(false)
-                        setDateTo(dateTo)
-                        setButtonTextTo(dateTo.toLocaleString().split(',')[0])
-                    }}
-                    onCancel={() => {
-                        setOpenTo(false)
-                    }}
-                />
+                <CalendarRegister date={dateTo} setDate={setDateTo} buttonTitle={fechaEgreso} setButtonTitle={setFechaEgreso} />
                 <Separator/>
+
+                <Text>Fecha de Ingreso {fechaIngreso}</Text>
+                <Text>Fecha de Egreso {fechaEgreso}</Text>
             </View>
-            <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
-                onPress={() => navigation.navigate('RegistroAnfitrionCasa')}
-                />
+            <View style={{alignItems: 'center'}}>
+                <CommonButton onPress={() => navigation.navigate('RegistroAnfitrionCasa')} />
             </View>
 
         </View>
