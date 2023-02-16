@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React } from "react";
 import { StyleSheet, TouchableOpacity, View , Text} from "react-native";
 
 const CommonButton = ({ buttonText, onPress, ButtonColor }) => {
@@ -13,10 +13,7 @@ const CommonButton = ({ buttonText, onPress, ButtonColor }) => {
     )
 }
 
-CommonButton.defaultProps = {
-    buttonText: 'Siguiente',
-    ButtonColor: style.red
-}
+
 
 style = StyleSheet.create({
     red: {
@@ -39,4 +36,10 @@ style = StyleSheet.create({
         color: 'white'
     }
 })
+
+CommonButton.defaultProps = {
+    buttonText: 'Siguiente',
+    ButtonColor: style.red
+}
+
 export default CommonButton;
