@@ -13,7 +13,7 @@ const InicioSesion = ({ navigation }) => {
             <View style={{backgroundcolor: 'red', alignSelf: 'flex-start'}}>
                 <Button
                     title={String.fromCharCode(8592)}
-                // onPress={() => navigation.navigate('Bienvenidos')}
+                onPress={() => navigation.navigate('Bienvenidos')}
                 />
 
             </View>
@@ -43,7 +43,7 @@ const InicioSesion = ({ navigation }) => {
             // onPress={() => navigation.navigate('Dashboard')}
             />
             <View style={styles.ForgotPass}>
-                <Text onPress={() => navigation.navigate('InicioSesion')}>
+                <Text onPress={() => navigation.navigate('RecuperacionContra')}>
                     ¿Olvidaste tu contaseña?
                 </Text>
             </View>
