@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -37,14 +38,16 @@ const RegistroAnfitrion = ({ navigation }) => {
                 <Text style={{marginBottom: 12}}>Mínimo ingresa 7 caracteres</Text>
             </View>
             <View>
-                <Button 
-                title='Registrarme'
-                color= '#FF5E5E'
+                <CommonButton 
+                buttonText='Registrarme'
                 onPress={() => navigation.navigate('RegistroAnfitrionVerificacion')}
                 />
             </View>
             <View>
-                <Text>¿Ya tienes cuenta? Login</Text>
+                <Text
+                    onPress={() => navigation.navigate('InicioSesion')}>
+                    ¿Ya tienes cuenta? Login
+                    </Text>
             </View>
         
         </View>
