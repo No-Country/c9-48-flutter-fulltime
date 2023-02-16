@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonButton from '../components/CommonButton';
 
 
 
@@ -32,10 +33,8 @@ const RegistroAnfitrionVerificacion = ({ navigation }) => {
                     multiline={true}
                     placeholder="Dinos si tu mascota requiere algún cuidado especial como darle alguna medicación u otra." />
             </View>
-            <View>
-                <Button
-                    title='Siguiente'
-                    color='#FF5E5E'
+            <View style={{ alignItems: 'center' }}>
+                <CommonButton 
                     // onPress={() => navigation.navigate('DashboardGeneral')}
                 />
             </View>
