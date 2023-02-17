@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Image, Button, StyleSheet, Text, TextInput } from "react-native";
+import CommonButton from '../components/CommonButton';
 
 
 const InicioSesion = ({ navigation }) => {
@@ -36,12 +37,10 @@ const InicioSesion = ({ navigation }) => {
                     value={userPass}
                     placeholder="*******" />
             </View>
+            <CommonButton 
+            buttonText={'INICIAR SESION'}
+            onPress={() => navigation.navigate('Dashboard')}  />
 
-            <Button
-                title='Iniciar Sesion'
-                color='#FF5E5E'
-            // onPress={() => navigation.navigate('Dashboard')}
-            />
             <View style={styles.ForgotPass}>
                 <Text onPress={() => navigation.navigate('RecuperacionContra')}>
                     ¿Olvidaste tu contaseña?
