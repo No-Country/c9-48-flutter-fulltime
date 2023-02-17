@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Button, StyleSheet, Text, TextInput } from "react-native";
+import CommonButton from '../components/CommonButton';
 
 
 const InicioSesion = ({ navigation }) => {
@@ -25,9 +26,8 @@ const InicioSesion = ({ navigation }) => {
                     placeholder="Ex: abc@example.com " />
             </View>
 
-            <Button
-                title='Enviar'
-                color='#FF5E5E'
+            <CommonButton
+            buttonText={'ENVIAR'}
             // onPress={() => function email recuperacion}
             />
         </View>
