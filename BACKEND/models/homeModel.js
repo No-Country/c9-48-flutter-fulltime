@@ -18,8 +18,13 @@ const homeSchema = new Schema({
   },
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'Owner'
+    ref: 'User'
+    
   },
+  pets: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Pet'
+  }],
   numberRooms: {
     type: Number,
     trim: true,
