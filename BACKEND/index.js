@@ -9,12 +9,14 @@ connectionDB()
 const port = process.env.PORT;
 const usersRoutes = require('./routes/users.routes');
 const routeLogin = require('./routes/login.routes');
+const homeRoutes = require('./routes/home.routes');
 
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/users', usersRoutes);
+app.use('/homes', homeRoutes);
 
 app.use('/login', routeLogin);
 
