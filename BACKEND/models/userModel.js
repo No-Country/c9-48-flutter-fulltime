@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const ownerSchema = new Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     trim : true,
@@ -23,12 +23,17 @@ const ownerSchema = new Schema({
   gender: {
     type: String,
     trim: true,
-    enum: ['male', 'female', 'other']
+    enum: ['MALE', 'FEMALE', 'OTHER']
   },
   role: {
     type: String,
     enum: ['USER', 'ADMIN'],
     default: 'USER'
+  },
+  experience: {
+    type: String,
+    trim: true,
+   
   },
   birthdate: {
     type: String,
@@ -36,4 +41,4 @@ const ownerSchema = new Schema({
   }
 })
 
-module.exports = model('Owner', ownerSchema)
+module.exports = model('User', userSchema)
