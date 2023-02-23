@@ -31,3 +31,5 @@ const homeSchema = new Schema({
     required: true
   }
 });
+
+module.exports = model('Home', homeSchema);
