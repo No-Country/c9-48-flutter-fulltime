@@ -1,13 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, ScrollView } from "react-native";
 import Separator from "../components/Separator";
 import DashboardPerfil from "../components/DashboardPerfil";
 
 const Dashboard = () => {
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <Text>Buscador🔍</Text>
             <Separator/>
             <Text>Cuidadores</Text>
+            <Text>Casas</Text>
+            <Separator/>
             <DashboardPerfil
             fotoPerfil={'Soy una foto de perfil'}
             descripcionPerfil={'Hola me llamo Carla soy viajera y amante de los animales. Mi sueño es recorrer todo Latam.'}
@@ -39,14 +41,13 @@ const Dashboard = () => {
             identidadVerificada={"✅ Identidad verificada"}
             />
             
-            <Text>Casas</Text>
-        </View>
+        </ScrollView>
     )
 
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexGrow: 1,
         padding: '5%',
         alignItems: 'center',
         justifyContent: 'flex-start',
