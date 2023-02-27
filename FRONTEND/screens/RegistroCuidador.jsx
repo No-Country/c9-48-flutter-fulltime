@@ -1,13 +1,13 @@
-import * as React from 'react'
+import {React, useState} from 'react'
 import { Text, TextInput, View, StyleSheet } from 'react-native';
 import CommonButton from '../components/CommonButton';
 import axios from 'axios';
 
 
 const RegistroCuidador = ({ navigation }) => {
-    const [CuidadorEmail, onChangeCuiEmail] = React.useState();
-    const [CuidadorName, onChangeCuiName] = React.useState();
-    const [CuidadorPass, onChangeCuiPass] = React.useState();
+    const [CuidadorEmail, onChangeCuiEmail] = useState();
+    const [CuidadorName, onChangeCuiName] = useState();
+    const [CuidadorPass, onChangeCuiPass] = useState();
     const sendCuidadorRegister = async () => {   
         await axios({
             method: 'post',
@@ -51,8 +51,8 @@ const RegistroCuidador = ({ navigation }) => {
                 <CommonButton
                 buttonText={'Registrarme'}
                     onPress={() => 
-                        // navigation.navigate('RegistroCuidadorVerificacion')
-                        sendCuidadorRegister()
+                        navigation.navigate('RegistroCuidadorVerificacion')
+                        // sendCuidadorRegister()
                     }
                 />
             </View>

@@ -52,7 +52,8 @@ const RegistroAnfitrion = ({ navigation }) => {
                 <CommonButton 
                 buttonText='Registrarme'
                 onPress={() => 
-                    sendAnfitrionRegister()
+                    navigation.navigate('RegistroAnfitrionVerificacion')
+                    // sendAnfitrionRegister()
                 }
                 />
             </View>
