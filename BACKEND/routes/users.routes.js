@@ -6,7 +6,7 @@ const validateFields = require('../middlewares/validateFields');
 const veryfyAuth = require('../middlewares/veryAuth');
 const route = Router();
 
-route.get('/', veryfyAuth, getUsers);
+route.get('/', getUsers);
 
 route.get('/:id', getUser);
 
