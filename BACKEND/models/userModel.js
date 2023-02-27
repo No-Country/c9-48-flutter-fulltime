@@ -38,6 +38,10 @@ const userSchema = new Schema({
   birthdate: {
     type: String,
     trim: true,
+  },
+  isOwner: {
+    type: Boolean,
+    required: true
   }
 })
 
