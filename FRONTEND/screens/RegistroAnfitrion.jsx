@@ -1,13 +1,25 @@
-import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {React, useState} from 'react'
+import { Text, TextInput, View, StyleSheet } from 'react-native';
 import CommonButton from '../components/CommonButton';
+import axios from 'axios';
 
 const RegistroAnfitrion = ({ navigation }) => {
-    const [AnfitrionEmail, onChangeAnfEmail] = React.useState();
-    const [AnfitrionName, onChangeAnfName] = React.useState();
-    const [AnfitrionPass, onChangeAnfPass] = React.useState();
-    const isDarkMode = useColorScheme() === 'dark'
+    const [AnfitrionEmail, onChangeAnfEmail] = useState('');
+    const [AnfitrionName, onChangeAnfName] = useState('');
+    const [AnfitrionPass, onChangeAnfPass] = useState('');
+    const sendAnfitrionRegister = async () => {   
+        await axios({
+            method: 'post',
+            url: 'https://mascotascuidadas.onrender.com/users',
+            data: {
+                name: AnfitrionName,
+                email: AnfitrionEmail,
+                password: AnfitrionPass,
+                isOwner: true
+        }  
+    })
+    // console.log(data)
+    }  
     return (
         <View style={Styles.container}>
             <View style={{ alignItems: 'flex-start' }}>
@@ -18,27 +30,30 @@ const RegistroAnfitrion = ({ navigation }) => {
                 <Text style={Styles.formTitles}>Email</Text>
                 <TextInput
                     style={Styles.input}
-                    onSubmitEditing={onChangeAnfEmail}
+                    onChangeText={text => onChangeAnfEmail(text)}
                     value={AnfitrionEmail}
                     placeholder="Ex: abc@example.com "/>
                 <Text style={Styles.formTitles}>Tu nombre</Text>
                 <TextInput
                     style={Styles.input}
-                    onSubmitEditing={onChangeAnfName}
+                    onChangeText={text => onChangeAnfName(text)}
                     value={AnfitrionName}
                     placeholder="Ex. Saul Ramirez"/>
                 <Text style={Styles.formTitles}>Tu contraseña</Text>
                 <TextInput
                     style={[Styles.input, {marginBottom: 0}]}
-                    onSubmitEditing={onChangeAnfPass}
+                    onChangeText={text => onChangeAnfPass(text)}
                     value={AnfitrionPass}
+                    secureTextEntry={true}
                     placeholder="*******"/>
                 <Text style={{marginBottom: 12}}>Mínimo ingresa 7 caracteres</Text>
             </View>
             <View style={{padding: 20}}>
                 <CommonButton 
                 buttonText='Registrarme'
-                onPress={() => navigation.navigate('RegistroAnfitrionVerificacion')}
+                onPress={() => 
+                    sendAnfitrionRegister()
+                }
                 />
             </View>
             <View style={{ flexDirection: 'row' }}>

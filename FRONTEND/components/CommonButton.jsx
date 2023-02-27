@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View , Text} from "react-native";
 
 const CommonButton = ({ buttonText, onPress, ButtonColor }) => {
     return (
-        <View>
+        <View style={{padding: 20}}>
             <TouchableOpacity 
                 style={ ButtonColor }
                 onPress={onPress}>
