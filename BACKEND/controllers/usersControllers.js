@@ -2,6 +2,14 @@ const CustomError = require('../helpers/customErrors')
 const userModel = require('../models/userModel')
 const bcrypt = require('bcrypt')
 
+const cloudinary = require('cloudinary').v2
+cloudinary.config({
+ cloud_name: "dcuutvq1r",
+ api_key: "982233735337178",
+ api_secret: "U-jmYYadEDGt634u2bG76x48CSw" 
+})
+const fs = require('fs-extra')
+
 const getUsers = async (req, res) => {
   try {
     const users = await userModel.find();
@@ -24,12 +32,16 @@ const getUser = async (req, res) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { password, ...user } = req.body
+    const { password, image, ...user } = req.body
+    const res = await cloudinary.uploader.upload(req.file.path)
     const salt = bcrypt.genSaltSync(10);
     const passwordEncrypted = bcrypt.hashSync(password, salt)
     user.password = passwordEncrypted;
+    user.image = res.secure_url
+    user.imgID = res.public_id
     const newUser = new userModel(user)
     await newUser.save()
+    await fs.unlink(req.file.path)
     res.status(201).json({message: `usuario creado: ${newUser.name}`})
   } catch (error) {
     res.status(error.code|| 400 ).json({message : error.message})
@@ -41,6 +53,7 @@ try {
   const { id } = req.params
   const userDeleted = await userModel.findByIdAndDelete(id);
   if(!userDeleted) throw new CustomError('usuario no encontrado', 404)
+  await cloudinary.uploader.destroy(userDeleted.imgID)
   res.status(200).json({message : "usuario eliminado"});
 } catch (error) {
   res.status(error.code || 400).json({message : error.message})
