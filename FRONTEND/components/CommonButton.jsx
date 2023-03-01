@@ -13,8 +13,6 @@ const CommonButton = ({ buttonText, onPress, ButtonColor }) => {
     )
 }
 
-
-
 style = StyleSheet.create({
     red: {
         backgroundColor: "#FF5E5E",
