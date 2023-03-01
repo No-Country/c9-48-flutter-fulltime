@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
+import { Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonButton from '../components/CommonButton';
 
@@ -35,7 +35,7 @@ const RegistroAnfitrionVerificacion = ({ navigation }) => {
             </View>
             <View style={{ alignItems: 'center' }}>
                 <CommonButton 
-                    // onPress={() => navigation.navigate('DashboardGeneral')}
+                    onPress={() => navigation.navigate('Dashboard')}
                 />
             </View>
 

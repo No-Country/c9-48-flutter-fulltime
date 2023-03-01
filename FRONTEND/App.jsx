@@ -16,6 +16,8 @@ import RegistroCuidadorVerificacion from './screens/RegistroCuidadorVerificacion
 import RegistroCuidadorDetalle from './screens/RegistroCuidadorDetalle';
 import RegistroCuidadorCasa from './screens/RegistroCuidadorCasa';
 import RegistroCuidadorMascota from './screens/RegistroCuidadorMascota'
+import Dashboard from './screens/Dashboard';
+import Perfil from './screens/Perfil';
 
 
 const Stack = createNativeStackNavigator();
@@ -39,8 +41,9 @@ const MyStack = () => {
         <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} />
         <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/>
-        
-      </Stack.Navigator>
+        <Stack.Screen name='Dashboard' component={Dashboard}/>
+        <Stack.Screen name='Perfil' component={Perfil}/>      
+      </Stack.Navigator>    
     </NavigationContainer>
   );
 };
