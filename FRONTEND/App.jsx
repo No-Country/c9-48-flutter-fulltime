@@ -20,6 +20,8 @@ import Dashboard from './screens/Dashboard';
 import Perfil from './screens/Perfil';
 import TabsMascotas from './navigation/BottomNav'
 import Favoritos from './screens/Favoritos';
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
+
 
 const Stack = createNativeStackNavigator();
 

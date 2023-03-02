@@ -13,6 +13,8 @@ const CommonButton = ({ buttonText, onPress, ButtonColor }) => {
     )
 }
 
+
+
 style = StyleSheet.create({
     red: {
         backgroundColor: "#FF5E5E",
@@ -35,9 +37,9 @@ style = StyleSheet.create({
     }
 })
 
+
 CommonButton.defaultProps = {
     buttonText: 'Siguiente',
     ButtonColor: style.red
 }
-
 export default CommonButton;

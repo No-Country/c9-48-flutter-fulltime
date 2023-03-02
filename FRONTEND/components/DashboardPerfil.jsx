@@ -30,18 +30,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'grey',
+        // backgroundColor: 'grey',
         marginVertical: 10
     },
     containerPorfilePicture: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'pink'
+        // backgroundColor: 'pink'
     },
     containerDescription: {
         flex: 1,
         flexGrow: 1,
-        backgroundColor: 'orange'
+        // backgroundColor: 'orange'
     },
     identidadVerificadaText: {
         padding: 20, 

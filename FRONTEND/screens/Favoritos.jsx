@@ -23,26 +23,6 @@ const Favoritos  = () => {
                 descripcionPerfil={'Desde chico crecí con dos perros y soy adiestrador de perros profesional. Soy Mexicano.'}
                 identidadVerificada={"✅ Identidad verificada"}
                 />
-                <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil 3'}
-                descripcionPerfil={'Amo viajar sola y no se me ocurre forma que estando acompañada de mascotas.'}
-                identidadVerificada={"✅ Identidad verificada"}
-                />
-                <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil 4'}
-                descripcionPerfil={'Estoy recorriendo varias ciudades de México el mes próximo. Amo las mascotas.'}
-                identidadVerificada={"✅ Identidad verificada"}
-                />
-                <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil 5'}
-                descripcionPerfil={'Descrpcion 5'}
-                identidadVerificada={"✅ Identidad verificada"}
-                />
-                <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil 6'}
-                descripcionPerfil={'Descrpcion 6'}
-                identidadVerificada={"✅ Identidad verificada"}
-                />
             </ScrollView>
         </View>
     )
