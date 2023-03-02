@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Separator from "../components/Separator";
 import DashboardPerfil from "../components/DashboardPerfil";
-import TabsMascotasBar from "../components/BottomNav";
 
 
 const Dashboard = () => {
@@ -45,8 +44,6 @@ const Dashboard = () => {
                 identidadVerificada={"✅ Identidad verificada"}
                 />
             </ScrollView>
-            {/* <TabsMascotasBar/> */}
-
         </View>
     )
 
@@ -64,3 +61,4 @@ const styles = StyleSheet.create({
 
 
 export default Dashboard;
+

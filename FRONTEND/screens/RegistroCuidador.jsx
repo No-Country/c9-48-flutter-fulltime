@@ -1,36 +1,48 @@
-import * as React from 'react'
-import { Button, Text, TextInput, View, useColorScheme, StyleSheet } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {React, useState} from 'react'
+import { Text, TextInput, View, StyleSheet } from 'react-native';
 import CommonButton from '../components/CommonButton';
-
+import axios from 'axios';
 
 
 const RegistroCuidador = ({ navigation }) => {
-    const [CuidadorEmail, onChangeCuiEmail] = React.useState();
-    const [CuidadorName, onChangeCuiName] = React.useState();
-    const [CuidadorPass, onChangeCuiPass] = React.useState();
-    const isDarkMode = useColorScheme() === 'dark'
+    const [CuidadorEmail, onChangeCuiEmail] = useState();
+    const [CuidadorName, onChangeCuiName] = useState();
+    const [CuidadorPass, onChangeCuiPass] = useState();
+    const sendCuidadorRegister = async () => {   
+        await axios({
+            method: 'post',
+            url: 'https://mascotascuidadas.onrender.com/users',
+            data: {
+                name: CuidadorName,
+                email: CuidadorEmail,
+                password: CuidadorPass,
+                isOwner: false
+        }  
+    })
+    } 
     return (
         <View style={Styles.container}>
             <View style={{alignItems: 'flex-start'}}>
                 <Text style={Styles.RegistroTitle}>Registro Cuidador</Text>
                 <Text style={Styles.RegistroSub}>Crea una cuenta para acceder a todas las funcionalidades de Mascotas Cuidadas!</Text>
+            </View>
+            <View>
                 <Text style={Styles.formTitles}>Email</Text>
                 <TextInput
                     style={Styles.input}
-                    onSubmitEditing={onChangeCuiEmail}
+                    onChangeText={text => onChangeCuiEmail(text)}
                     value={CuidadorEmail}
                     placeholder="Ex: abc@example.com " />
                 <Text style={Styles.formTitles}>Tu nombre</Text>
                 <TextInput
                     style={Styles.input}
-                    onSubmitEditing={onChangeCuiName}
+                    onChangeText={text => onChangeCuiName(text)}
                     value={CuidadorName}
                     placeholder="Ex. Saul Ramirez" />
                 <Text style={Styles.formTitles}>Tu contraseña</Text>
                 <TextInput
                     style={[Styles.input, { marginBottom: 0 }]}
-                    onSubmitEditing={onChangeCuiPass}
+                    onChangeText={text => onChangeCuiPass(text)}
                     value={CuidadorPass}
                     placeholder="*******" />
                 <Text style={{ marginBottom: 12 }}>Mínimo ingresa 7 caracteres</Text>
@@ -38,7 +50,10 @@ const RegistroCuidador = ({ navigation }) => {
             <View style={{ padding: 20 }}>
                 <CommonButton
                 buttonText={'Registrarme'}
-                    onPress={() => navigation.navigate('RegistroCuidadorVerificacion')}
+                    onPress={() => 
+                        navigation.navigate('RegistroCuidadorVerificacion')
+                        // sendCuidadorRegister()
+                    }
                 />
             </View>
             <View style={{flexDirection: 'row'}}>
