@@ -35,7 +35,11 @@ const RegistroAnfitrionVerificacion = ({ navigation }) => {
             </View>
             <View style={{ alignItems: 'center' }}>
                 <CommonButton 
+<<<<<<< HEAD
                     onPress={() => navigation.navigate('TabsMascotas')}
+=======
+                    onPress={() => navigation.navigate('Dashboard')}
+>>>>>>> main
                 />
             </View>
 

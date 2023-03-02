@@ -38,6 +38,17 @@ const userSchema = new Schema({
   birthdate: {
     type: String,
     trim: true,
+  },
+  image: {
+    type: String,
+    trim: true
+  },
+  imgID: {
+    type: String
+  },
+  isOwner: {
+    type: Boolean,
+    required: true
   }
 })
 
