@@ -58,7 +58,7 @@ const RegistroCuidadorMascota = ({ navigation }) => {
                 <Text>Imagen</Text>
             </View>
             <View style={{ alignItems: 'center' }}>
-                <CommonButton onPress={() => navigation.navigate('RegistroCuidadorMascota')} />
+                <CommonButton onPress={() => navigation.navigate('TabsMascotas')} />
             </View>
         </View>
     )

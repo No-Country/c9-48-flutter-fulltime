@@ -18,7 +18,7 @@ import RegistroCuidadorCasa from './screens/RegistroCuidadorCasa';
 import RegistroCuidadorMascota from './screens/RegistroCuidadorMascota'
 import Dashboard from './screens/Dashboard';
 import Perfil from './screens/Perfil';
-
+import TabsMascotas from './navigation/BottomNav';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +42,7 @@ const MyStack = () => {
         <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/>
         <Stack.Screen name='Dashboard' component={Dashboard}/>
+        <Stack.Screen name='TabsMascotas' component={TabsMascotas}/>
         <Stack.Screen name='Perfil' component={Perfil}/>      
       </Stack.Navigator>    
     </NavigationContainer>
