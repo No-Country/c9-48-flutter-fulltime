@@ -16,14 +16,9 @@ import RegistroCuidadorVerificacion from './screens/RegistroCuidadorVerificacion
 import RegistroCuidadorDetalle from './screens/RegistroCuidadorDetalle';
 import RegistroCuidadorCasa from './screens/RegistroCuidadorCasa';
 import RegistroCuidadorMascota from './screens/RegistroCuidadorMascota'
-<<<<<<< HEAD
 import Dashboard from './screens/Dashboard';
 import Perfil from './screens/Perfil';
-import TabsMascotas from './navigation/BottomNav';
-=======
-import Dashboard from './screens/Dashboard'
-
->>>>>>> main
+import TabsMascotas from './navigation/BottomNav'
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +26,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="CarouselIntro" component={CarouselIntro} />
+        <Stack.Screen name="CarouselIntro" component={CarouselIntro} />
         <Stack.Screen name="Bienvenidos" component={Bienvenidos}  />
         <Stack.Screen name='InicioSesion' component={InicioSesion}/>
         <Stack.Screen name='RecuperacionContra' component={RecuperacionContra} />
@@ -45,19 +40,11 @@ const MyStack = () => {
         <Stack.Screen name='RegistroCuidadorVerificacion' component={RegistroCuidadorVerificacion} />
         <Stack.Screen name='RegistroCuidadorDetalle' component={RegistroCuidadorDetalle} />
         <Stack.Screen name='RegistroCuidadorCasa' component={RegistroCuidadorCasa}/>
-<<<<<<< HEAD
         <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/>
-        <Stack.Screen name='Dashboard' component={Dashboard}/>
         <Stack.Screen name='TabsMascotas' component={TabsMascotas}/>
         <Stack.Screen name='Perfil' component={Perfil}/>      
-      </Stack.Navigator>    
-=======
-        <Stack.Screen name='RegistroCuidadorMascota' component={RegistroCuidadorMascota}/> */}
-        <Stack.Screen name='Dasboard' component={Dashboard}/>
-
-        
+        <Stack.Screen name='Dashboard' component={Dashboard}/>
       </Stack.Navigator>
->>>>>>> main
     </NavigationContainer>
   );
 };
