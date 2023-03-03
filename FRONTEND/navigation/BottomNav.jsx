@@ -11,10 +11,10 @@ const Tab = createBottomTabNavigator();
 const TabsMascotas = () => {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false }}
-      tabBarOptions={{
-        activeTintColor: '#827397',
-        inactiveTintColor: '#B0B0B0',
+      screenOptions={{ 
+        headerShown: false,
+        tabBaractiveTintColor: '#0A0A0A',
+        tabBarinactiveTintColor: '#B0B0B0',
       }}
     >
       <Tab.Screen
