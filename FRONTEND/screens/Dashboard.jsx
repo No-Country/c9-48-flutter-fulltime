@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TextInput} from "react-native";
+import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Touchable} from "react-native";
 import Separator from "../components/Separator";
 import DashboardPerfil from "../components/DashboardPerfil";
 
@@ -15,10 +15,18 @@ const Dashboard = () => {
                 </TextInput>
                 <Separator/>
                 <View style={{flexDirection: 'row'}}>
-                    <Text>Cuidadores </Text>
-                    <Text>Casas</Text>
+                    <TouchableOpacity
+                    // onPress={showCasas}
+                    >
+                        <Text style={{color: '#575DFB', fontSize: 20, paddingHorizontal: 40}}>Cuidadores</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                    // onPress={showCasas}
+                    >
+                        <Text style={{ fontSize: 20, paddingHorizontal: 40}}>Casas</Text>
+                    </TouchableOpacity>
+                    
                 </View>
-
                 <Separator/>
                 <DashboardPerfil
                 fotoPerfil={'https://i.pravatar.cc/150?u=user5'}

@@ -25,11 +25,15 @@ const ImageUploadBox = () => {
   };
 
   return (
-    <View style={{ height: 150, width: 150, backgroundColor: 'grey', marginHorizontal: 20, justifyContent: 'center' }}>
+    <View style={{ height: 150, width: 150, backgroundColor: '#FF5E5E', marginHorizontal: 20, justifyContent: 'center' }}>
       {imageData ? <Image source={{ uri: imageData }} style={{ height: '100%', width: '100%' }} /> : (
-        <TouchableOpacity onPress={openGallery}>
-          <Text style={{ alignSelf: 'center' }}>Select an image</Text>
+        // <View>
+        <TouchableOpacity 
+        style={{height: 150, width: 150, justifyContent: 'center'}}
+        onPress={openGallery}>
+          <Text style={{ alignSelf: 'center' , color: 'white'}}>Sube una foto</Text>
         </TouchableOpacity>
+        // <View/>
       )}
     </View>
   );
