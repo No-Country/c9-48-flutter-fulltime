@@ -8,10 +8,10 @@ const InicioSesion = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={{ backgroundcolor: 'red', alignSelf: 'flex-start' }}>
-                <Button
+                {/* <Button
                     title={String.fromCharCode(8592)}
                 onPress={() => navigation.navigate('InicioSesion')}
-                />
+                /> */}
             </View>
             <View style={{alignSelf:'flex-start' ,padding: 20}}>
                 <Text style={styles.formTitles}>¿Olvidaste tu contraseña?</Text>

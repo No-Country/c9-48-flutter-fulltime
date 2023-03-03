@@ -4,6 +4,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CheckBox from '@react-native-community/checkbox';
 import DatePicker from 'react-native-date-picker'
 import CommonButton from '../components/CommonButton';
+import ImageUploadBox from '../components/ImageUploadBox';
 
 
 
@@ -55,7 +56,7 @@ const RegistroCuidadorMascota = ({ navigation }) => {
                 <Separator/>
             </View>
             <View>
-                <Text>Imagen</Text>
+                <ImageUploadBox/>
             </View>
             <View style={{ alignItems: 'center' }}>
                 <CommonButton onPress={() => navigation.navigate('TabsMascotas')} />

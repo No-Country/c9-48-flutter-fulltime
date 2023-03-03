@@ -12,10 +12,10 @@ const InicioSesion = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={{backgroundcolor: 'red', alignSelf: 'flex-start'}}>
-                <Button
+                {/* <Button
                     title={String.fromCharCode(8592)}
                 onPress={() => navigation.navigate('Bienvenidos')}
-                />
+                /> */}
 
             </View>
                 <Image
@@ -35,11 +35,12 @@ const InicioSesion = ({ navigation }) => {
                     style={styles.input}
                     onSubmitEditing={onChangeUserPass}
                     value={userPass}
+                    secureTextEntry={true}
                     placeholder="*******" />
             </View>
             <CommonButton 
             buttonText={'INICIAR SESION'}
-            onPress={() => navigation.navigate('Dashboard')}  />
+            onPress={() => navigation.navigate('TabsMascotas')}  />
 
             <View style={styles.ForgotPass}>
                 <Text onPress={() => navigation.navigate('RecuperacionContra')}>
@@ -49,17 +50,17 @@ const InicioSesion = ({ navigation }) => {
 
             <View style={{ flexDirection: 'row' }}>
                 <View style={styles.linesContainer}>
-                    <Separator />
+                    {/* <Separator /> */}
                 </View>
-                <Text>o regístrate con </Text>
+                {/* <Text>o regístrate con </Text> */}
                 <View style={styles.linesContainer}>
-                    <Separator />
+                    {/* <Separator /> */}
                 </View>
             </View>
             <View style={styles.socialsContainer}>
-                <Text>Logo 1</Text>
+                {/* <Text>Logo 1</Text>
                 <Text>Logo 2</Text>
-                <Text>Logo 3</Text>
+                <Text>Logo 3</Text> */}
             </View>
             <View style={{ flex: 2 }}>
                 <View style={styles.termsContainer}>

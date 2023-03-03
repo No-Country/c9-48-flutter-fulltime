@@ -1,11 +1,23 @@
-import { View, Text, StyleSheet } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Separator from "./Separator";
 
 const DashboardPerfil = ({fotoPerfil, descripcionPerfil, identidadVerificada}) => {
+    const [heartIcon, setHeartIcon] = useState('♡');
+
+    const onHeartPress = () => {
+    setHeartIcon(heartIcon === '♡' ? '❤️' : '♡');
+    };
     return (
         <View style={styles.container}>
             <View style={styles.containerPorfilePicture}>
-                <Text>{fotoPerfil}</Text>
+                <Image  
+                style={{width: 150, height: 150}}
+                source={{uri:fotoPerfil}}
+                />
+                <TouchableOpacity onPress={onHeartPress}>
+                <Text style={{alignSelf: 'flex-end', fontSize: 25}}>{heartIcon}</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.containerDescription}>
                 <Text
@@ -18,9 +30,8 @@ const DashboardPerfil = ({fotoPerfil, descripcionPerfil, identidadVerificada}) =
                 >
                     {identidadVerificada}
                 </Text>
-                
             </View>
-            <Separator/>
+
         </View>
         
     )

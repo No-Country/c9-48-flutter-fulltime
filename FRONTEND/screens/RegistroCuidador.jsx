@@ -45,7 +45,7 @@ const RegistroCuidador = ({ navigation }) => {
                     onChangeText={text => onChangeCuiPass(text)}
                     value={CuidadorPass}
                     placeholder="*******" />
-                <Text style={{ marginBottom: 12 }}>Mínimo ingresa 7 caracteres</Text>
+                <Text style={{ marginBottom: 12 }}>Mínimo ingresa 8 caracteres</Text>
             </View>
             <View style={{ padding: 20 }}>
                 <CommonButton

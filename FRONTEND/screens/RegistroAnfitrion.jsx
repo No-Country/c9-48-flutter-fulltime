@@ -32,6 +32,7 @@ const RegistroAnfitrion = ({ navigation }) => {
                     style={Styles.input}
                     onChangeText={text => onChangeAnfEmail(text)}
                     value={AnfitrionEmail}
+                    inputMode='email'
                     placeholder="Ex: abc@example.com "/>
                 <Text style={Styles.formTitles}>Tu nombre</Text>
                 <TextInput
@@ -46,7 +47,7 @@ const RegistroAnfitrion = ({ navigation }) => {
                     value={AnfitrionPass}
                     secureTextEntry={true}
                     placeholder="*******"/>
-                <Text style={{marginBottom: 12}}>Mínimo ingresa 7 caracteres</Text>
+                <Text style={{marginBottom: 12}}>Mínimo ingresa 8 caracteres</Text>
             </View>
             <View style={{padding: 20}}>
                 <CommonButton 

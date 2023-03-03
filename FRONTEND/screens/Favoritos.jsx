@@ -3,25 +3,26 @@ import Separator from "../components/Separator";
 import DashboardPerfil from "../components/DashboardPerfil";
 
 
-const Favoritos  = () => {
+const Favoritos  = ({heartIcon}) => {
 
     return (
-        <View>
+        <View>           
             <ScrollView contentContainerStyle={styles.container}>
-                <Text>Favoritos</Text>
+                <Text>Tus Favoritos</Text>
                 <Separator/>
-                <Text>Cuidadores</Text>
-                <Text>Casas</Text>
-                <Separator/>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text>Cuidadores </Text>
+                    <Text>Casas</Text>
+                </View>
                 <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil'}
-                descripcionPerfil={'Hola me llamo Carla soy viajera y amante de los animales. Mi sueño es recorrer todo Latam.'}
-                identidadVerificada={"✅ Identidad verificada"}
+                    fotoPerfil={'https://i.pravatar.cc/150?u=user11'}
+                    descripcionPerfil={'Soy Sofia y tengo experiencia en el cuidado de mascotas. Soy amante de los animales y me encanta pasear con ellos por la ciudad.'}
+                    identidadVerificada={"✅ Identidad verificada"}
                 />
                 <DashboardPerfil
-                fotoPerfil={'Soy una foto de perfil 2'}
-                descripcionPerfil={'Desde chico crecí con dos perros y soy adiestrador de perros profesional. Soy Mexicano.'}
-                identidadVerificada={"✅ Identidad verificada"}
+                    fotoPerfil={'https://i.pravatar.cc/150?u=user2334'}
+                    descripcionPerfil={'Soy Gabriel y he tenido mascotas toda mi vida. Me encanta pasar tiempo con ellos, jugar y pasear por la ciudad. También tengo experiencia en el cuidado de mascotas de otras personas.'}
+                    identidadVerificada={"✅ Identidad verificada"}
                 />
             </ScrollView>
         </View>
