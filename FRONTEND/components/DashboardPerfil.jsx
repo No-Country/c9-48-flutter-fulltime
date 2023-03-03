@@ -1,11 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import Separator from "./Separator";
 
 const DashboardPerfil = ({fotoPerfil, descripcionPerfil, identidadVerificada}) => {
     return (
         <View style={styles.container}>
             <View style={styles.containerPorfilePicture}>
-                <Text>{fotoPerfil}</Text>
+                <Image  
+                style={{width: 150, height: 150}}
+                source={{uri:fotoPerfil}}
+                />
+                <Text style={{alignSelf: 'flex-end', fontSize: 25}}>♡</Text>
             </View>
             <View style={styles.containerDescription}>
                 <Text
