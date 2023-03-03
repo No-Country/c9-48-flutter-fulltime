@@ -8,11 +8,11 @@ const Bienvenidos = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={{alignSelf: 'flex-start' }}>
-                <Button 
+                {/* <Button 
                     title='Atrás'
                     color='grey'
                     onPress={() => navigation.navigate('CarouselIntro')}
-                />
+                /> */}
                 </View>
             <Text>Bienvenidos y bienvenidas a  </Text>
 
