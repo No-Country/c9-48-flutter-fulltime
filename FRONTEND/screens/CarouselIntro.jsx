@@ -1,20 +1,17 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Button, useColorScheme } from "react-native";
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonButton from "../components/CommonButton";
 
 const CarouselIntro = ({navigation}) => {
-    const isDarkMode = useColorScheme() === 'dark';
-    const OmitirButton = () => {
-        return (
-            <TouchableOpacity styles={styles.OmitirButton}>
-                <Text style={styles.OmitirButtonText}>Saltar</Text>
-            </TouchableOpacity>
-        )
 
-    }
+    // const OmitirButton = () => {
+    //     return (
+    //         <TouchableOpacity styles={styles.OmitirButton}>
+    //             <Text style={styles.OmitirButtonText}>Saltar</Text>
+    //         </TouchableOpacity>
+    //     )
+
+    // }
     const EmpezarButton = () => {
         return (
             <Button
@@ -47,8 +44,8 @@ const CarouselIntro = ({navigation}) => {
             return (
                 <View key={index} style={(styles.slide)}>
                     <Image source={slide.image} />
-                    <Text style={[styles.mainText, { color: isDarkMode ? Colors.white : Colors.black }]}>{slide.mainText}</Text>
-                    <Text style={[styles.subText, { color: isDarkMode ? Colors.light : Colors.dark }]}>{slide.subText}</Text>
+                    <Text style={[styles.mainText, {  }]}>{slide.mainText}</Text>
+                    <Text style={[styles.subText, {  }]}>{slide.subText}</Text>
                 </View>
             );
         });
@@ -57,10 +54,10 @@ const CarouselIntro = ({navigation}) => {
     // Return principal
 
     return (
-        <View style={{ backgroundColor: isDarkMode ? Colors.black : Colors.white, }}>
+        <View>
 
             <View style={{ position: "absolute", top: 0, flexDirection: "column", alignSelf: "flex-end" }}>
-                {OmitirButton()}
+                {/* {OmitirButton()} */}
             </View>
             <ScrollView
                 horizontal
