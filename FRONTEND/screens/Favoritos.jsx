@@ -13,7 +13,7 @@ const Favoritos  = () => {
                 <Text>Cuidadores</Text>
                 <Text>Casas</Text>
                 <Separator/>
-                <DashboardPerfil
+                {/* <DashboardPerfil
                 fotoPerfil={'Soy una foto de perfil'}
                 descripcionPerfil={'Hola me llamo Carla soy viajera y amante de los animales. Mi sueño es recorrer todo Latam.'}
                 identidadVerificada={"✅ Identidad verificada"}
@@ -22,7 +22,7 @@ const Favoritos  = () => {
                 fotoPerfil={'Soy una foto de perfil 2'}
                 descripcionPerfil={'Desde chico crecí con dos perros y soy adiestrador de perros profesional. Soy Mexicano.'}
                 identidadVerificada={"✅ Identidad verificada"}
-                />
+                /> */}
             </ScrollView>
         </View>
     )
