@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import {ImagePicker} from 'react-native-image-picker';
+import { React, useState } from 'react';
+import { View, TouchableOpacity, Text, Image } from 'react-native';
+import { launchImageLibrary } from 'react-native-image-picker';
+
+const options = {
+  title: 'Select Image',
+  type: 'library',
+  options: {
+    maxHeight: 200,
+    maxWidth: 200,
+    selectionLimit: 1,
+    mediaType: 'photo',
+    includeBase64: false,
+  }
+};
 
 const ImageUploadBox = () => {
-    const [image, setImage] = useState(null);
+  const [imageData, setImageData] = useState(null);
 
-    const handleChoosePhoto = () => {
-        ImagePicker.launchImageLibrary({}, response => {
-            if (response.didCancel) {
-                console.log('User cancelled image picker');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else {
-                setImage(response.uri);
-            }
-        });
-    };
+  const openGallery = async () => {
+    const response = await launchImageLibrary(options);
+    if (!response.didCancel && !response.errorCode) {
+      setImageData(response.assets[0].uri);
+    }
+  };
 
-    return (
-        <View>
-            {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-            <TouchableOpacity onPress={handleChoosePhoto}>
-                <View style={{ width: 200, height: 200, backgroundColor: '#eee' }}>
-                    <Text>Select Photo</Text>
-                </View>
-            </TouchableOpacity>
-        </View>
-    );
+  return (
+    <View style={{ height: 150, width: 150, backgroundColor: 'grey', marginHorizontal: 20, justifyContent: 'center' }}>
+      {imageData ? <Image source={{ uri: imageData }} style={{ height: '100%', width: '100%' }} /> : (
+        <TouchableOpacity onPress={openGallery}>
+          <Text style={{ alignSelf: 'center' }}>Select an image</Text>
+        </TouchableOpacity>
+      )}
+    </View>
+  );
 };
 
 export default ImageUploadBox;

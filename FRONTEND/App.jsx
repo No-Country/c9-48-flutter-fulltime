@@ -19,6 +19,9 @@ import RegistroCuidadorMascota from './screens/RegistroCuidadorMascota'
 import Dashboard from './screens/Dashboard';
 import Perfil from './screens/Perfil';
 import TabsMascotas from './navigation/BottomNav'
+import Favoritos from './screens/Favoritos';
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +47,8 @@ const MyStack = () => {
         <Stack.Screen name='TabsMascotas' component={TabsMascotas}/>
         <Stack.Screen name='Perfil' component={Perfil}/>      
         <Stack.Screen name='Dashboard' component={Dashboard}/>
+        <Stack.Screen name='Favoritos' component={Favoritos}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
